@@ -19,6 +19,14 @@ class ViewController: UIViewController {
         if(accessToken == nil) {
         fbUtility.showFBLoginButton(self.view)
         } else {
+            PFFacebookUtils.logInInBackgroundWithAccessToken(FBUtility.getFbAccessToken(), block: {
+                (user: PFUser?, error: NSError?) -> Void in
+                if user != nil {
+                    println("User logged in through Facebook!")
+                } else {
+                    println("Uh oh. There was an error logging in.")
+                }
+            })
         }
     }
 }
