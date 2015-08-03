@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		076E37DA9C7CCBFD423B8EEE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E49E3AF911E7285CCD65770 /* libPods.a */; };
+		13D8F9B78B7C0ABABA1DDC82 /* libPods-DubSwag.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D09EC600F49742688575ECF /* libPods-DubSwag.a */; };
+		9473D8781B6F8D0800B076ED /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9473D8761B6F8D0800B076ED /* ParseFacebookUtilsV4.framework */; };
+		9473D87A1B6FA1D700B076ED /* selectVideoFrom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9473D8791B6FA1D700B076ED /* selectVideoFrom.storyboard */; };
+		9473D87C1B6FA22A00B076ED /* SelectVideoFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473D87B1B6FA22A00B076ED /* SelectVideoFromViewController.swift */; };
+		9473D87E1B6FAA0300B076ED /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473D87D1B6FAA0300B076ED /* Router.swift */; };
+		9473D8821B6FBAAE00B076ED /* FBUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473D8811B6FBAAE00B076ED /* FBUtility.swift */; };
 		949F687A1B6A76F900C9AD48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949F68791B6A76F900C9AD48 /* AppDelegate.swift */; };
 		949F687C1B6A76F900C9AD48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949F687B1B6A76F900C9AD48 /* ViewController.swift */; };
 		949F687F1B6A76F900C9AD48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949F687D1B6A76F900C9AD48 /* Main.storyboard */; };
@@ -26,6 +33,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D09EC600F49742688575ECF /* libPods-DubSwag.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DubSwag.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F7CCAAF116F02900487F269 /* Pods-DubSwag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DubSwag.release.xcconfig"; path = "Pods/Target Support Files/Pods-DubSwag/Pods-DubSwag.release.xcconfig"; sourceTree = "<group>"; };
+		5E49E3AF911E7285CCD65770 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9473D8761B6F8D0800B076ED /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		9473D8791B6FA1D700B076ED /* selectVideoFrom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = selectVideoFrom.storyboard; sourceTree = "<group>"; };
+		9473D87B1B6FA22A00B076ED /* SelectVideoFromViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectVideoFromViewController.swift; sourceTree = "<group>"; };
+		9473D87D1B6FAA0300B076ED /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		9473D8811B6FBAAE00B076ED /* FBUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUtility.swift; sourceTree = "<group>"; };
 		949F68741B6A76F900C9AD48 /* DubSwag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubSwag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949F68781B6A76F900C9AD48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		949F68791B6A76F900C9AD48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +51,8 @@
 		949F68891B6A76F900C9AD48 /* DubSwagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DubSwagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		949F688E1B6A76F900C9AD48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		949F688F1B6A76F900C9AD48 /* DubSwagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DubSwagTests.swift; sourceTree = "<group>"; };
+		949F68991B6B5EAB00C9AD48 /* DugSwag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DugSwag-Bridging-Header.h"; sourceTree = "<group>"; };
+		B0E23DC67E58CEAC17368BCC /* Pods-DubSwag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DubSwag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DubSwag/Pods-DubSwag.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076E37DA9C7CCBFD423B8EEE /* libPods.a in Frameworks */,
+				13D8F9B78B7C0ABABA1DDC82 /* libPods-DubSwag.a in Frameworks */,
+				9473D8781B6F8D0800B076ED /* ParseFacebookUtilsV4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,9 +79,12 @@
 		949F686B1B6A76F900C9AD48 = {
 			isa = PBXGroup;
 			children = (
+				9473D8761B6F8D0800B076ED /* ParseFacebookUtilsV4.framework */,
 				949F68761B6A76F900C9AD48 /* DubSwag */,
 				949F688C1B6A76F900C9AD48 /* DubSwagTests */,
 				949F68751B6A76F900C9AD48 /* Products */,
+				B847B60B03EB73017AE9C016 /* Pods */,
+				DE2B642009F68CA25F901854 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,8 +101,12 @@
 			isa = PBXGroup;
 			children = (
 				949F68791B6A76F900C9AD48 /* AppDelegate.swift */,
+				9473D8811B6FBAAE00B076ED /* FBUtility.swift */,
 				949F687B1B6A76F900C9AD48 /* ViewController.swift */,
+				9473D87D1B6FAA0300B076ED /* Router.swift */,
 				949F687D1B6A76F900C9AD48 /* Main.storyboard */,
+				9473D8791B6FA1D700B076ED /* selectVideoFrom.storyboard */,
+				9473D87B1B6FA22A00B076ED /* SelectVideoFromViewController.swift */,
 				949F68801B6A76F900C9AD48 /* Images.xcassets */,
 				949F68821B6A76F900C9AD48 /* LaunchScreen.xib */,
 				949F68771B6A76F900C9AD48 /* Supporting Files */,
@@ -107,9 +134,28 @@
 		949F688D1B6A76F900C9AD48 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				949F68991B6B5EAB00C9AD48 /* DugSwag-Bridging-Header.h */,
 				949F688E1B6A76F900C9AD48 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B847B60B03EB73017AE9C016 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0E23DC67E58CEAC17368BCC /* Pods-DubSwag.debug.xcconfig */,
+				4F7CCAAF116F02900487F269 /* Pods-DubSwag.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DE2B642009F68CA25F901854 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E49E3AF911E7285CCD65770 /* libPods.a */,
+				4D09EC600F49742688575ECF /* libPods-DubSwag.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 949F68931B6A76F900C9AD48 /* Build configuration list for PBXNativeTarget "DubSwag" */;
 			buildPhases = (
+				C7EE6A5E70A4ADD92D131E03 /* Check Pods Manifest.lock */,
 				949F68701B6A76F900C9AD48 /* Sources */,
 				949F68711B6A76F900C9AD48 /* Frameworks */,
 				949F68721B6A76F900C9AD48 /* Resources */,
+				F6EB673A3E8C8E7296D9141F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9473D87A1B6FA1D700B076ED /* selectVideoFrom.storyboard in Resources */,
 				949F687F1B6A76F900C9AD48 /* Main.storyboard in Resources */,
 				949F68841B6A76F900C9AD48 /* LaunchScreen.xib in Resources */,
 				949F68811B6A76F900C9AD48 /* Images.xcassets in Resources */,
@@ -207,13 +256,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C7EE6A5E70A4ADD92D131E03 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F6EB673A3E8C8E7296D9141F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DubSwag/Pods-DubSwag-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		949F68701B6A76F900C9AD48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9473D87E1B6FAA0300B076ED /* Router.swift in Sources */,
 				949F687C1B6A76F900C9AD48 /* ViewController.swift in Sources */,
+				9473D8821B6FBAAE00B076ED /* FBUtility.swift in Sources */,
 				949F687A1B6A76F900C9AD48 /* AppDelegate.swift in Sources */,
+				9473D87C1B6FA22A00B076ED /* SelectVideoFromViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,21 +425,35 @@
 		};
 		949F68941B6A76F900C9AD48 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0E23DC67E58CEAC17368BCC /* Pods-DubSwag.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-library-1",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DubSwag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/talhababar/Desktop/DubSwag/DubSwagTests/DugSwag-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		949F68951B6A76F900C9AD48 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F7CCAAF116F02900487F269 /* Pods-DubSwag.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-library-1",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DubSwag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/talhababar/Desktop/DubSwag/DubSwagTests/DugSwag-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -411,6 +510,7 @@
 				949F68951B6A76F900C9AD48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		949F68961B6A76F900C9AD48 /* Build configuration list for PBXNativeTarget "DubSwagTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +519,7 @@
 				949F68981B6A76F900C9AD48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

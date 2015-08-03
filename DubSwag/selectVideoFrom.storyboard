@@ -1,7 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Select Video-->
+        <scene sceneID="YPH-bY-nbM">
+            <objects>
+                <viewController storyboardIdentifier="SelectVideoFrom" id="2MX-us-QVL" customClass="SelectVideoFromViewController" customModule="DubSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nYC-lT-F5d"/>
+                        <viewControllerLayoutGuide type="bottom" id="lWD-ic-aW3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UkK-Fm-StV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FqN-PF-wsH">
+                                <rect key="frame" x="73" y="159" width="174" height="30"/>
+                                <state key="normal" title="Select Video From Server"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kU9-Hh-8LX">
+                                <rect key="frame" x="96" y="349" width="129" height="30"/>
+                                <state key="normal" title="Upload Own Video">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="kU9-Hh-8LX" secondAttribute="centerX" constant="-0.5" id="1N6-34-XTd"/>
+                            <constraint firstItem="kU9-Hh-8LX" firstAttribute="bottom" secondItem="lWD-ic-aW3" secondAttribute="top" multiplier="2:3" id="Avs-33-Vdx"/>
+                            <constraint firstItem="FqN-PF-wsH" firstAttribute="centerX" secondItem="UkK-Fm-StV" secondAttribute="trailing" multiplier="1:2" id="OoM-1Q-e6u"/>
+                            <constraint firstItem="FqN-PF-wsH" firstAttribute="bottom" secondItem="lWD-ic-aW3" secondAttribute="top" multiplier="1:3" id="VsR-Tf-LEg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Video" id="H8z-ud-l73"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dfR-xJ-VbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2562" y="1412"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="exg-c6-Ty4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vdT-60-4sc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NOL-dm-qnS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2MX-us-QVL" kind="relationship" relationship="rootViewController" id="4cV-fb-shu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K1o-tM-X07" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1750" y="1412"/>
+        </scene>
+    </scenes>
 </document>

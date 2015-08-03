@@ -10,16 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var accessToken: FBSDKAccessToken?
+    var fbUtility = FBUtility()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        accessToken = FBUtility.getFbAccessToken()
+        if(accessToken == nil) {
+        fbUtility.showFBLoginButton(self.view)
+        } else {
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

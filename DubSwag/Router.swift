@@ -9,5 +9,11 @@
 import UIKit
 
 class Router: NSObject {
+    
+    static func showSelectVideoFromViewController(fromViewController: UIViewController){
+        let mainStoryboard = UIStoryboard(name: "selectVideoFrom", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("SelectVideoFrom") as! SelectVideoFromViewController
+         fromViewController.navigationController?.pushViewController(vc, animated: true )
+    }
    
 }
