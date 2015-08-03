@@ -8,32 +8,18 @@
 
 import UIKit
 
-class FBUtility: NSObject, FBSDKLoginButtonDelegate {
+class FBUtility: NSObject {
     
     let btnLogin = FBSDKLoginButton()
     
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        if ((error) != nil)
-        {
-            println("ERROR: User Cannot LogIn")
-        }
-        else if result.isCancelled {
-            println("User have Cancelled LogIn")
-        }
-        else {
-        }
+    func getFBLoginButton() -> FBSDKLoginButton {
+        return btnLogin
     }
-    
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        println("UserLogged Out")
-    }
-    
     
     func showFBLoginButton(view: UIView) {
         btnLogin.center = view.center
         view.addSubview(btnLogin)
         btnLogin.readPermissions = ["public_profile","email"]
-        btnLogin.delegate = self
     }
 
     static func getFbId() -> String {
@@ -82,10 +68,6 @@ class FBUtility: NSObject, FBSDKLoginButtonDelegate {
         else {
             return "error"
         }
-    }
-
-    static func getFbAccessToken() -> FBSDKAccessToken {
-        return FBSDKAccessToken.currentAccessToken()
     }
 
 }
