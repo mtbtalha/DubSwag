@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var centerContainer: MMDrawerController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -25,7 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             println("trackAppOpenedWithLaunchOptionsInBackground Called")
         })
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        return true
     }
 
     func applicationWillResignActive(application: UIApplication) {

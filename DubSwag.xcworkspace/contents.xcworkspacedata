@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:FBUtility.swift">
-   </FileRef>
-   <FileRef
-      location = "group:DugSwag-Bridging-Header.h">
-   </FileRef>
-   <FileRef
       location = "group:DubSwag.xcodeproj">
    </FileRef>
    <FileRef

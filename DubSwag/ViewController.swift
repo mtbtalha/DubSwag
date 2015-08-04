@@ -16,6 +16,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        accessToken = FBSDKAccessToken.currentAccessToken()
         if(accessToken == nil) {
             fbUtility.showFBLoginButton(self.view)
             fbLoginButton = fbUtility.getFBLoginButton()

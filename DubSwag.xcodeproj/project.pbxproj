@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		076E37DA9C7CCBFD423B8EEE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E49E3AF911E7285CCD65770 /* libPods.a */; };
 		13D8F9B78B7C0ABABA1DDC82 /* libPods-DubSwag.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D09EC600F49742688575ECF /* libPods-DubSwag.a */; };
+		9416AA901B70CBCF00EB57A3 /* NavigationDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9416AA8F1B70CBCF00EB57A3 /* NavigationDrawerViewController.swift */; };
 		9473D8781B6F8D0800B076ED /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9473D8761B6F8D0800B076ED /* ParseFacebookUtilsV4.framework */; };
 		9473D87A1B6FA1D700B076ED /* selectVideoFrom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9473D8791B6FA1D700B076ED /* selectVideoFrom.storyboard */; };
 		9473D87C1B6FA22A00B076ED /* SelectVideoFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473D87B1B6FA22A00B076ED /* SelectVideoFromViewController.swift */; };
@@ -36,6 +37,7 @@
 		4D09EC600F49742688575ECF /* libPods-DubSwag.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DubSwag.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F7CCAAF116F02900487F269 /* Pods-DubSwag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DubSwag.release.xcconfig"; path = "Pods/Target Support Files/Pods-DubSwag/Pods-DubSwag.release.xcconfig"; sourceTree = "<group>"; };
 		5E49E3AF911E7285CCD65770 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9416AA8F1B70CBCF00EB57A3 /* NavigationDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDrawerViewController.swift; sourceTree = "<group>"; };
 		9473D8761B6F8D0800B076ED /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		9473D8791B6FA1D700B076ED /* selectVideoFrom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = selectVideoFrom.storyboard; sourceTree = "<group>"; };
 		9473D87B1B6FA22A00B076ED /* SelectVideoFromViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectVideoFromViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +81,6 @@
 		949F686B1B6A76F900C9AD48 = {
 			isa = PBXGroup;
 			children = (
-				9473D8761B6F8D0800B076ED /* ParseFacebookUtilsV4.framework */,
 				949F68761B6A76F900C9AD48 /* DubSwag */,
 				949F688C1B6A76F900C9AD48 /* DubSwagTests */,
 				949F68751B6A76F900C9AD48 /* Products */,
@@ -106,6 +107,7 @@
 				9473D87D1B6FAA0300B076ED /* Router.swift */,
 				949F687D1B6A76F900C9AD48 /* Main.storyboard */,
 				9473D8791B6FA1D700B076ED /* selectVideoFrom.storyboard */,
+				9416AA8F1B70CBCF00EB57A3 /* NavigationDrawerViewController.swift */,
 				9473D87B1B6FA22A00B076ED /* SelectVideoFromViewController.swift */,
 				949F68801B6A76F900C9AD48 /* Images.xcassets */,
 				949F68821B6A76F900C9AD48 /* LaunchScreen.xib */,
@@ -152,6 +154,7 @@
 		DE2B642009F68CA25F901854 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9473D8761B6F8D0800B076ED /* ParseFacebookUtilsV4.framework */,
 				5E49E3AF911E7285CCD65770 /* libPods.a */,
 				4D09EC600F49742688575ECF /* libPods-DubSwag.a */,
 			);
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9473D87E1B6FAA0300B076ED /* Router.swift in Sources */,
+				9416AA901B70CBCF00EB57A3 /* NavigationDrawerViewController.swift in Sources */,
 				949F687C1B6A76F900C9AD48 /* ViewController.swift in Sources */,
 				9473D8821B6FBAAE00B076ED /* FBUtility.swift in Sources */,
 				949F687A1B6A76F900C9AD48 /* AppDelegate.swift in Sources */,

@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-DubSwag-MMDrawerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-DubSwag-Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1B0809A0BEFD891C26C32144</key>
+		<key>055F0ECA058A90E220CB7096</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2BE2294B4E5FECF728BFFF6E</key>
+		<key>51BC1892A870FA43864CBA45</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>461E04CEED82EFB9CE916598</key>
+		<key>588C9BBF60371A9BDCFE7C92</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>50721AA10CDD2DFB206B535C</key>
+		<key>74D8E9F410CF8C96F2517720</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>821284091D1DDF4E84A1800A</key>
+		<key>DDDD7D1CB959DD2F8A224C14</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A0F52CA45E028554679EE532</key>
+		<key>DF6198BBD4F3916B1487FD1A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C204A10E9AEEE83FB092740A</key>
+		<key>E22276CF1113E61FC21C46DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5E1614CAD57431998963B43</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -6,6 +6,7 @@ target 'DubSwag' do
     pod 'FBSDKLoginKit' , '~>4.1.0'
     pod 'Parse', '~>1.7.1'
     pod 'ParseUI', '~>1.1.3'
+    pod 'MMDrawerController', '~> 0.5.7'
 end
 
 target 'DubSwag' do

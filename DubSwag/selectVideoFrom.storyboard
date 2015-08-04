@@ -8,7 +8,7 @@
         <!--Select Video-->
         <scene sceneID="YPH-bY-nbM">
             <objects>
-                <viewController storyboardIdentifier="SelectVideoFrom" id="2MX-us-QVL" customClass="SelectVideoFromViewController" customModule="DubSwag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectVideoFromViewController" id="2MX-us-QVL" customClass="SelectVideoFromViewController" customModule="DubSwag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nYC-lT-F5d"/>
                         <viewControllerLayoutGuide type="bottom" id="lWD-ic-aW3"/>
@@ -36,12 +36,69 @@
                             <constraint firstItem="FqN-PF-wsH" firstAttribute="bottom" secondItem="lWD-ic-aW3" secondAttribute="top" multiplier="1:3" id="VsR-Tf-LEg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Select Video" id="H8z-ud-l73"/>
+                    <navigationItem key="navigationItem" title="Select Video" id="H8z-ud-l73">
+                        <barButtonItem key="leftBarButtonItem" title="=" id="5D9-ft-kFc">
+                            <connections>
+                                <action selector="NavigationDrawerButtonTapped:" destination="2MX-us-QVL" id="ulE-2H-a6e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfR-xJ-VbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2562" y="1412"/>
+            <point key="canvasLocation" x="2239" y="1396"/>
+        </scene>
+        <!--Navigation Drawer View Controller-->
+        <scene sceneID="2MR-zA-j7C">
+            <objects>
+                <viewController storyboardIdentifier="NavigationDrawerViewController" id="5Ic-uv-jtb" customClass="NavigationDrawerViewController" customModule="DubSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7b7-BR-ECt"/>
+                        <viewControllerLayoutGuide type="bottom" id="EzY-rF-O2j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YJD-fL-ar1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2p-dy-iCJ">
+                                <rect key="frame" x="24" y="59" width="83" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GvZ-1K-ehw">
+                                <rect key="frame" x="0.0" y="474" width="320" height="86"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sJY-h2-hTw">
+                                <rect key="frame" x="0.0" y="95" width="320" height="378"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="C0e-Dg-6KW">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C0e-Dg-6KW" id="tIh-oJ-GvY">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GvZ-1K-ehw" firstAttribute="bottom" secondItem="EzY-rF-O2j" secondAttribute="top" multiplier="3:3" id="cZE-Pf-EuH"/>
+                            <constraint firstItem="GvZ-1K-ehw" firstAttribute="trailing" secondItem="YJD-fL-ar1" secondAttribute="trailing" multiplier="1:1" id="dMM-h3-oED"/>
+                            <constraint firstItem="H2p-dy-iCJ" firstAttribute="bottom" secondItem="EzY-rF-O2j" secondAttribute="top" multiplier="1:7" id="lAj-br-LGZ"/>
+                            <constraint firstItem="H2p-dy-iCJ" firstAttribute="trailing" secondItem="YJD-fL-ar1" secondAttribute="trailing" multiplier="1:3" id="oKV-d2-2e3"/>
+                            <constraint firstItem="sJY-h2-hTw" firstAttribute="trailing" secondItem="YJD-fL-ar1" secondAttribute="trailing" multiplier="1:1" id="q7a-Zs-iWx"/>
+                            <constraint firstItem="sJY-h2-hTw" firstAttribute="bottom" secondItem="EzY-rF-O2j" secondAttribute="top" multiplier="2:3" id="yVm-U9-qcV"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rnt-of-tXn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2616" y="1412"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="exg-c6-Ty4">
