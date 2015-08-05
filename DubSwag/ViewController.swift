@@ -30,6 +30,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                     println("Uh oh. There was an error logging in.")
                 }
             })
+            
             Router.showSelectVideoFromViewController(self)
         }
     }
@@ -44,6 +45,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
         else {
             Router.showSelectVideoFromViewController(self)
+            
         }
     }
     

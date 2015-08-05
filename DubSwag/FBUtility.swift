@@ -22,7 +22,7 @@ class FBUtility: NSObject {
         btnLogin.readPermissions = ["public_profile","email"]
     }
 
-    static func getFbId() -> String {
+    static func getFbId() -> String? {
         var fbID = ""
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
@@ -34,6 +34,7 @@ class FBUtility: NSObject {
             }
             else
             {
+                
                 fbID = result.valueForKey("id") as! String
             }
         })
@@ -41,17 +42,32 @@ class FBUtility: NSObject {
             return fbID
         }
         else {
-            return "error"
+            return nil
         }
     }
     
    
     
-    static func getFbUsername() -> String {
-        var fbUsername = ""
+    static func getFbUsername(success: (String) ->  ()) {
+        var fbUsername : String?
+//        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+//        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+//            
+//            if ((error) != nil)
+//            {
+//                // Process error
+//                println("Error: \(error)")
+//            }
+//            else
+//            {
+//                println(result)
+//                fbUsername = result.valueForKey("name") as? String
+//                println(fbUsername)
+//            }
+//        })
+        
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            
             if ((error) != nil)
             {
                 // Process error
@@ -59,15 +75,16 @@ class FBUtility: NSObject {
             }
             else
             {
-                fbUsername = result.valueForKey("name") as! String
+                
+                fbUsername = result.valueForKey("name") as? String ?? ""
+                if(fbUsername != "") {
+                    success(fbUsername!)
+                }
+                else {
+                    success("")
+                }
             }
         })
-        if(fbUsername != "") {
-            return fbUsername
-        }
-        else {
-            return "error"
-        }
     }
 
 }
