@@ -36,5 +36,11 @@ class Router: NSObject {
         appDelegate.window!.makeKeyAndVisible()
 
     }
-   
+    
+    static func showCategorySelectionViewController(fromViewController: UIViewController){
+                let mainStoryboard = UIStoryboard(name: "selectVideoFrom", bundle: NSBundle.mainBundle())
+                let vc = mainStoryboard.instantiateViewControllerWithIdentifier("CategorySelectionViewController") as! CategorySelectionViewController
+        
+                 fromViewController.navigationController?.pushViewController(vc, animated: true )
+    }
 }

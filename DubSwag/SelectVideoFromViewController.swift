@@ -16,6 +16,9 @@ class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDel
         
         // Do any additional setup after loading the view.
     }
+    @IBAction func selectVideoFromServerTapped(sender: AnyObject) {
+        Router.showCategorySelectionViewController(self)
+    }
 
     @IBAction func NavigationDrawerButtonTapped(sender: AnyObject) {
         var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
