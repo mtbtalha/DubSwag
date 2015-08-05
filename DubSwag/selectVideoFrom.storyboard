@@ -26,6 +26,9 @@
                                 <state key="normal" title="Upload Own Video">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="uploadVideoButtonTapped:" destination="2MX-us-QVL" eventType="touchUpInside" id="dKP-Bd-bUs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfR-xJ-VbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2239" y="1396"/>
+            <point key="canvasLocation" x="2258" y="1396"/>
         </scene>
         <!--Navigation Drawer View Controller-->
         <scene sceneID="2MR-zA-j7C">

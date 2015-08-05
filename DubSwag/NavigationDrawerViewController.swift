@@ -17,17 +17,21 @@ class NavigationDrawerViewController: UIViewController,UITableViewDelegate,UITab
     @IBOutlet weak var fbLoginButton: FBSDKLoginButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController!.navigationBar.hidden = true
         tableview.delegate = self
         tableview.dataSource = self
-//        tableview.frame = CGRectMake(tableview.frame.origin.x, tableview.frame.origin.y, tableview.frame.width, 3*45 )
         tableviewHeight.constant = 3 * 45
+        var user = PFUser.currentUser()
+        if user != nil {
+            println(user?.username)
+        } else {
+            println("NO User")
+        }
         FBUtility.getFbUsername { (username) -> () in
             self.usernameLabel.text = username
         }
     }
     
-//    self.tableview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-//    }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3

@@ -21,6 +21,7 @@
 		949F68811B6A76F900C9AD48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 949F68801B6A76F900C9AD48 /* Images.xcassets */; };
 		949F68841B6A76F900C9AD48 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 949F68821B6A76F900C9AD48 /* LaunchScreen.xib */; };
 		949F68901B6A76F900C9AD48 /* DubSwagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949F688F1B6A76F900C9AD48 /* DubSwagTests.swift */; };
+		94CD56B01B723FF5007EDEF6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CD56AF1B723FF5007EDEF6 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		949F688E1B6A76F900C9AD48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		949F688F1B6A76F900C9AD48 /* DubSwagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DubSwagTests.swift; sourceTree = "<group>"; };
 		949F68991B6B5EAB00C9AD48 /* DugSwag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DugSwag-Bridging-Header.h"; sourceTree = "<group>"; };
+		94CD56AF1B723FF5007EDEF6 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B0E23DC67E58CEAC17368BCC /* Pods-DubSwag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DubSwag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DubSwag/Pods-DubSwag.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 				9473D8791B6FA1D700B076ED /* selectVideoFrom.storyboard */,
 				9416AA8F1B70CBCF00EB57A3 /* NavigationDrawerViewController.swift */,
 				9473D87B1B6FA22A00B076ED /* SelectVideoFromViewController.swift */,
+				94CD56AF1B723FF5007EDEF6 /* DataManager.swift */,
 				949F68801B6A76F900C9AD48 /* Images.xcassets */,
 				949F68821B6A76F900C9AD48 /* LaunchScreen.xib */,
 				949F68771B6A76F900C9AD48 /* Supporting Files */,
@@ -300,6 +303,7 @@
 				9473D87E1B6FAA0300B076ED /* Router.swift in Sources */,
 				9416AA901B70CBCF00EB57A3 /* NavigationDrawerViewController.swift in Sources */,
 				949F687C1B6A76F900C9AD48 /* ViewController.swift in Sources */,
+				94CD56B01B723FF5007EDEF6 /* DataManager.swift in Sources */,
 				9473D8821B6FBAAE00B076ED /* FBUtility.swift in Sources */,
 				949F687A1B6A76F900C9AD48 /* AppDelegate.swift in Sources */,
 				9473D87C1B6FA22A00B076ED /* SelectVideoFromViewController.swift in Sources */,
