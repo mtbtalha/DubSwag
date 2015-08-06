@@ -85,28 +85,30 @@ class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDel
                 message: "Do you want to save your video on Server?",
                 preferredStyle: UIAlertControllerStyle.Alert)
             let actionYes = UIAlertAction(title: "Yes", style: .Default) { (alertAction) -> Void in
-                 ParseManager.uploadFile(videoData, fileName: "video.mov", success: { (file) -> () in
-                    var videoFile = file["File"] as! PFFile
-                    self.videoFileURL = videoFile.url
-                    println(videoFile.url)
-                    Router.showCategorySelectionViewController(self, delegate: self)
-                })
-                ParseManager.uploadFile(thumbnailData!, fileName: "thumbnail.png", success: { (file) -> () in
-                    var imageFile = file["File"] as! PFFile
-                    self.thumbnailFileURL = imageFile.url
-                    println(imageFile.url)
-                    
-                })
+                let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                progressHUD.labelText = "Uploading..."
                 
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
+                        ParseManager.uploadFile(videoData, fileName: "video.mov", success: { (file) -> () in
+                        var videoFile = file["File"] as! PFFile
+                        self.videoFileURL = videoFile.url
+                        println(videoFile.url)
+                        progressHUD.hide(true)
+                        Router.showCategorySelectionViewController(self, delegate: self)
+                    })
+                    ParseManager.uploadFile(thumbnailData!, fileName: "thumbnail.png", success: { (file) -> () in
+                        var imageFile = file["File"] as! PFFile
+                        self.thumbnailFileURL = imageFile.url
+                        println(imageFile.url)
+                    })
+                }
             }
             let actionNo = UIAlertAction(title: "No", style: .Default) { (alertAction) -> Void in
             }
-
             alert.addAction(actionYes)
             alert.addAction(actionNo)
             self.presentViewController(alert, animated: true,
                 completion: nil)
-
             }
         }
     }

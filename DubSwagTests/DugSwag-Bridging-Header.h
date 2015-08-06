@@ -15,4 +15,6 @@
 #import <ParseUI/ParseUI.h>
 #import <ParseFacebookUtilsv4/PFFacebookUtils.h>
 #import <MMDrawerController/MMDrawerController.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #endif

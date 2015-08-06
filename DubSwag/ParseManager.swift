@@ -32,4 +32,36 @@ class ParseManager: NSObject {
         videoObject["thumbnailURL"] = thumbnailURL
         videoObject.saveInBackground()
     }
+    
+    static func getCategories(success: ([PFObject]) ->  ()) {
+        var query = PFQuery(className:"Categories")
+        query.limit = 100
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                success(objects as! [PFObject])
+            } else {
+                // Log details of the failure
+                println("Error: \(error!) \(error!.userInfo!)")
+            }
+        }
+    }
+    
+    static func getUserVideos(categoryId: String, success: ([PFObject]) -> ()){
+        var query = PFQuery(className: "User_Videos")
+        query.whereKey("categoryId", equalTo:categoryId)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                success(objects as! [PFObject])
+            
+            } else {
+                // Log details of the failure
+                println("Error: \(error!) \(error!.userInfo!)")
+            }
+        }
+        
+    }
 }

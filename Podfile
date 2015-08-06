@@ -7,6 +7,8 @@ target 'DubSwag' do
     pod 'Parse', '~>1.7.1'
     pod 'ParseUI', '~>1.1.3'
     pod 'MMDrawerController', '~> 0.5.7'
+    pod 'MBProgressHUD', '~> 0.9.1'
+    pod 'SDWebImage'
 end
 
 target 'DubSwag' do
