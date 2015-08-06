@@ -23,6 +23,8 @@
 		949F68901B6A76F900C9AD48 /* DubSwagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949F688F1B6A76F900C9AD48 /* DubSwagTests.swift */; };
 		94CD56B01B723FF5007EDEF6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CD56AF1B723FF5007EDEF6 /* DataManager.swift */; };
 		94CD56B21B724F2A007EDEF6 /* CategorySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CD56B11B724F2A007EDEF6 /* CategorySelectionViewController.swift */; };
+		94CD56B41B735E92007EDEF6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CD56B31B735E92007EDEF6 /* Category.swift */; };
+		94CD56B61B73718C007EDEF6 /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CD56B51B73718C007EDEF6 /* ParseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		949F68991B6B5EAB00C9AD48 /* DugSwag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DugSwag-Bridging-Header.h"; sourceTree = "<group>"; };
 		94CD56AF1B723FF5007EDEF6 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		94CD56B11B724F2A007EDEF6 /* CategorySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewController.swift; sourceTree = "<group>"; };
+		94CD56B31B735E92007EDEF6 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		94CD56B51B73718C007EDEF6 /* ParseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
 		B0E23DC67E58CEAC17368BCC /* Pods-DubSwag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DubSwag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DubSwag/Pods-DubSwag.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +118,8 @@
 				94CD56B11B724F2A007EDEF6 /* CategorySelectionViewController.swift */,
 				9416AA8F1B70CBCF00EB57A3 /* NavigationDrawerViewController.swift */,
 				9473D87B1B6FA22A00B076ED /* SelectVideoFromViewController.swift */,
+				94CD56B51B73718C007EDEF6 /* ParseManager.swift */,
+				94CD56B31B735E92007EDEF6 /* Category.swift */,
 				94CD56AF1B723FF5007EDEF6 /* DataManager.swift */,
 				949F68801B6A76F900C9AD48 /* Images.xcassets */,
 				949F68821B6A76F900C9AD48 /* LaunchScreen.xib */,
@@ -304,10 +310,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9473D87E1B6FAA0300B076ED /* Router.swift in Sources */,
+				94CD56B61B73718C007EDEF6 /* ParseManager.swift in Sources */,
 				9416AA901B70CBCF00EB57A3 /* NavigationDrawerViewController.swift in Sources */,
 				949F687C1B6A76F900C9AD48 /* ViewController.swift in Sources */,
 				94CD56B21B724F2A007EDEF6 /* CategorySelectionViewController.swift in Sources */,
 				94CD56B01B723FF5007EDEF6 /* DataManager.swift in Sources */,
+				94CD56B41B735E92007EDEF6 /* Category.swift in Sources */,
 				9473D8821B6FBAAE00B076ED /* FBUtility.swift in Sources */,
 				949F687A1B6A76F900C9AD48 /* AppDelegate.swift in Sources */,
 				9473D87C1B6FA22A00B076ED /* SelectVideoFromViewController.swift in Sources */,

@@ -8,9 +8,11 @@
 
 import UIKit
 
+
 class CategorySelectionViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    var categories = [String]()
+    var categoryObjects = [Category]()
+    var delegate: CategorySelectionDelegate?
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +20,11 @@ class CategorySelectionViewController: UIViewController,UITableViewDelegate,UITa
         tableView.delegate = self
         getCategories { (objects) -> () in
             for object in objects {
-                self.categories.append(object["categoryName"] as! String)
-                self.tableView.reloadData()
+                var category = Category(category: object)
+                //println(category.categoryName)
+                self.categoryObjects.append(category)
             }
+            self.tableView.reloadData()
         }
     }
     
@@ -36,10 +40,10 @@ class CategorySelectionViewController: UIViewController,UITableViewDelegate,UITa
                 // Do something with the found objects
                 
                 if let objects = objects as? [PFObject] {
-                    for object in objects {
-                        println(object["categoryName"] as! String)
-                        
-                    }
+//                    for object in objects {
+//                        println(object["categoryName"] as! String)
+//                        
+//                    }
                 }
             } else {
                 // Log details of the failure
@@ -50,8 +54,17 @@ class CategorySelectionViewController: UIViewController,UITableViewDelegate,UITa
 
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let delegate = self.delegate {
+        self.delegate?.categoryDidSelect(categoryObjects[indexPath.row])
+        } else {
+            
+        }
+    }
+
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.categories.count
+        return self.categoryObjects.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -60,7 +73,7 @@ class CategorySelectionViewController: UIViewController,UITableViewDelegate,UITa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCellWithIdentifier("TableViewCellIdentifier", forIndexPath: indexPath) as! UITableViewCell
-            cell.textLabel?.text = self.categories[indexPath.row]
+            cell.textLabel?.text = self.categoryObjects[indexPath.row].categoryName
             cell.textLabel?.font.fontWithSize(14.0)
             return cell
             
