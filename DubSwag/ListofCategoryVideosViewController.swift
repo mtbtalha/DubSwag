@@ -37,7 +37,7 @@ class ListofCategoryVideosViewController: UIViewController, UITableViewDataSourc
             let cell = tableView.dequeueReusableCellWithIdentifier(VideoTableViewCell.videoCellIdentifier, forIndexPath: indexPath) as! VideoTableViewCell
             let videoObject = userVideoObjects[indexPath.row]
             var thumbnailURL = NSURL(string: videoObject.thumbnailURL!)
-            cell.imageView!.sd_setImageWithURL(thumbnailURL!)
+            cell.videoThumbnailImageView.sd_setImageWithURL(thumbnailURL!)
             cell.videoNameLabel.text = videoObject.videoName
             return cell
     }

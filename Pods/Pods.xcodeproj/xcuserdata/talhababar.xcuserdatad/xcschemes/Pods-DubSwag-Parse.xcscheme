@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E4DCEBA48FC6691EF7029CEB"
+               BlueprintIdentifier = "332EDCE8A31322094131064A"
                BuildableName = "libPods-DubSwag-Parse.a"
                BlueprintName = "Pods-DubSwag-Parse"
                ReferencedContainer = "container:Pods.xcodeproj">

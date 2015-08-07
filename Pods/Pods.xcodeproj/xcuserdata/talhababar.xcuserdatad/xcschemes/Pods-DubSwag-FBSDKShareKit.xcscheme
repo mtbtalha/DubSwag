@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "66261C915CA4CA9F19051C00"
+               BlueprintIdentifier = "DE19E2FDDC04FBAB2E7BA3CF"
                BuildableName = "libPods-DubSwag-FBSDKShareKit.a"
                BlueprintName = "Pods-DubSwag-FBSDKShareKit"
                ReferencedContainer = "container:Pods.xcodeproj">
