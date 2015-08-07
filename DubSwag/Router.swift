@@ -62,4 +62,9 @@ class Router: NSObject {
         fromViewController.navigationController?.pushViewController(vc, animated: true )
     }
 
+    static func showRecordSmashViewController(fromViewController: UIViewController){
+        let mainStoryboard = UIStoryboard(name: "RecordSmash", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("RecordSmashViewController") as! RecordSmashViewController
+        fromViewController.navigationController?.pushViewController(vc, animated: true )
+    }
 }

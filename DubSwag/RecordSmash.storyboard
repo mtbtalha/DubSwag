@@ -1,7 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Record Smash View Controller-->
+        <scene sceneID="gDH-1Z-jQ6">
+            <objects>
+                <viewController storyboardIdentifier="RecordSmashViewController" id="1Yq-a1-gsp" customClass="RecordSmashViewController" customModule="DubSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pl5-Kx-yeI"/>
+                        <viewControllerLayoutGuide type="bottom" id="g0q-se-yqf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QUJ-LT-LfZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJT-pG-fOE">
+                                <rect key="frame" x="0.0" y="152" width="320" height="244"/>
+                                <color key="backgroundColor" red="0.15686677630000001" green="0.4371659128" blue="0.92097553450000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqo-q6-Jhj">
+                                <rect key="frame" x="110" y="418" width="100" height="100"/>
+                                <state key="normal" image="microphone">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yty-hY-S2k">
+                                <rect key="frame" x="46" y="434" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5E6-Ec-fRy">
+                                <rect key="frame" x="230" y="424" width="50" height="50"/>
+                                <state key="normal" image="stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hJT-pG-fOE" secondAttribute="trailing" id="1TV-lK-mSm"/>
+                            <constraint firstAttribute="centerX" secondItem="Dqo-q6-Jhj" secondAttribute="centerX" id="2fq-mO-NWa"/>
+                            <constraint firstItem="hJT-pG-fOE" firstAttribute="leading" secondItem="QUJ-LT-LfZ" secondAttribute="leading" id="Bjd-ai-grJ"/>
+                            <constraint firstItem="5E6-Ec-fRy" firstAttribute="top" secondItem="hJT-pG-fOE" secondAttribute="bottom" constant="28" id="YI5-ns-na3"/>
+                            <constraint firstItem="g0q-se-yqf" firstAttribute="top" secondItem="hJT-pG-fOE" secondAttribute="bottom" constant="172" id="cpM-Ki-CgP"/>
+                            <constraint firstItem="hJT-pG-fOE" firstAttribute="top" secondItem="Pl5-Kx-yeI" secondAttribute="bottom" constant="132" id="eHg-03-sug"/>
+                            <constraint firstItem="5E6-Ec-fRy" firstAttribute="leading" secondItem="QUJ-LT-LfZ" secondAttribute="leading" constant="230" id="hxE-iU-99d"/>
+                            <constraint firstItem="yty-hY-S2k" firstAttribute="top" secondItem="hJT-pG-fOE" secondAttribute="bottom" constant="38" id="i3e-Bb-lRc"/>
+                            <constraint firstItem="Dqo-q6-Jhj" firstAttribute="top" secondItem="hJT-pG-fOE" secondAttribute="bottom" constant="22" id="isr-1i-2ub"/>
+                            <constraint firstAttribute="trailing" secondItem="5E6-Ec-fRy" secondAttribute="trailing" constant="40" id="jox-Mf-taD"/>
+                            <constraint firstAttribute="trailing" secondItem="yty-hY-S2k" secondAttribute="trailing" constant="226" id="jqE-XH-Fp3"/>
+                            <constraint firstItem="yty-hY-S2k" firstAttribute="leading" secondItem="QUJ-LT-LfZ" secondAttribute="leading" constant="46" id="ua1-rh-pzz"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XKV-15-OMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="350"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="microphone" width="100" height="100"/>
+        <image name="stop" width="50" height="50"/>
+    </resources>
 </document>

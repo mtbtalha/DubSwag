@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import Player
 import MediaPlayer
 
 class PlayVideoViewController: UIViewController {
@@ -27,19 +26,14 @@ class PlayVideoViewController: UIViewController {
             activityIndicator.startAnimating()
             videoURL = NSURL(string: video.videoURL!)
             loadMoviePlayer(videoURL!)
-            
-//            self.player.view.frame = self.playerView.bounds
-//            
-//            self.addChildViewController(self.player)
-//            self.playerView.addSubview(self.player.view)
-//            self.player.didMoveToParentViewController(self)
-//            self.player.path = video.videoURL!
         }
     }
 
     @IBAction func startSmashingButtonTapped(sender: AnyObject) {
-//         self.player.fillMode = AVLayerVideoGravityResizeAspect
-//         self.player.playFromBeginning()
+        if let moviePlayer = self.moviePlayer {
+            moviePlayer.stop()
+        }
+        Router.showRecordSmashViewController(self)
     }
    
     
