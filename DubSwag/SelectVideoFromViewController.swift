@@ -9,7 +9,9 @@
 import UIKit
 import MobileCoreServices
 import AVFoundation
-
+import MMDrawerController
+import Parse
+import MBProgressHUD
 
 protocol CategorySelectionDelegate {
     func categoryDidSelect(category: Category)

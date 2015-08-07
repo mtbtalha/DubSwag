@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ParseManager: NSObject {
     static func uploadFile(data: NSData,fileName: String,success: (PFObject) ->  ()) {

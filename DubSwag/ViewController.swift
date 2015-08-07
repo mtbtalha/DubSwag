@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
+import Parse
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
 

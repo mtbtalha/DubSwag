@@ -46,7 +46,7 @@ class CategorySelectionViewController: UIViewController,UITableViewDelegate,UITa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let delegate = self.delegate {
-        self.delegate?.categoryDidSelect(categoryObjects[indexPath.row])
+        delegate.categoryDidSelect(categoryObjects[indexPath.row])
         } else {
         Router.showListOfCategoryVideosViewController(self, categoryId: categoryObjects[indexPath.row].categoryId!)
         }

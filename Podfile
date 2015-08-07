@@ -9,8 +9,8 @@ target 'DubSwag' do
     pod 'MMDrawerController', '~> 0.5.7'
     pod 'MBProgressHUD', '~> 0.9.1'
     pod 'SDWebImage'
+use_frameworks!
+    pod 'Player'
 end
 
-target 'DubSwag' do
-    
-end
+

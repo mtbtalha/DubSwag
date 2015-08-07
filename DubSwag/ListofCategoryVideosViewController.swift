@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+
 
 class ListofCategoryVideosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -26,6 +28,10 @@ class ListofCategoryVideosViewController: UIViewController, UITableViewDataSourc
             }
             self.tableView.reloadData()
         }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        Router.showPlayVideoViewController(self, video: userVideoObjects[indexPath.row])
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -44,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-DubSwag-Player.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-DubSwag-SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -56,6 +61,62 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>023C3F2D31F79771EB272636</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0CE29E055322822EE7F31380</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>171538B45E5871DDCEDD0D80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>20BA5F1414E6E264707B0622</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>33B79153A04E050F9A22D19B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>51E5B12FC978D6AF0E345790</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6970C087BA334BCA76E1ED90</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>741D878C074DCDC2F0869D09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CC5C4F51E7E26367983BEC1F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CCC5347DF898773CB50DC064</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF6549DB0DB0606DF07B1FA2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

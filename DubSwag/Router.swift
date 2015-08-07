@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MMDrawerController
 
 class Router: NSObject {
     
@@ -51,6 +52,13 @@ class Router: NSObject {
         let mainStoryboard = UIStoryboard(name: "ListOfCategoryVideos", bundle: NSBundle.mainBundle())
         let vc = mainStoryboard.instantiateViewControllerWithIdentifier("ListofCategoryVideosViewController") as! ListofCategoryVideosViewController
         vc.categoryId = categoryId
+        fromViewController.navigationController?.pushViewController(vc, animated: true )
+    }
+    
+    static func showPlayVideoViewController(fromViewController: UIViewController, video: UserVideos){
+        let mainStoryboard = UIStoryboard(name: "PlayVideo", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("PlayVideoViewController") as! PlayVideoViewController
+        vc.video = video
         fromViewController.navigationController?.pushViewController(vc, animated: true )
     }
 
