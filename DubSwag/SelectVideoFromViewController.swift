@@ -9,9 +9,7 @@
 import UIKit
 import MobileCoreServices
 import AVFoundation
-import MMDrawerController
-import Parse
-import MBProgressHUD
+
 
 protocol CategorySelectionDelegate {
     func categoryDidSelect(category: Category)
@@ -79,7 +77,7 @@ class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDel
      
         } else { if (mediaType == kUTTypeMovie as! String) {
                 let videoURL = info[UIImagePickerControllerMediaURL] as! NSURL
-                let thumbnailData = getVideoThumbnail(videoURL)
+                let thumbnailData = MediaManager.getVideoThumbnail(videoURL)
                 let videoURLString = videoURL.path
                 println(videoURLString)
             var videoData: NSData = NSFileManager().contentsAtPath(videoURLString!)!
@@ -127,23 +125,23 @@ class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDel
         }
     }
     
-    func getVideoThumbnail(url: NSURL) -> NSData? {
-        var err: NSError? = nil
-        let asset = AVURLAsset(URL: url, options: nil)
-        let imgGenerator = AVAssetImageGenerator(asset: asset)
-        let cgImage = imgGenerator.copyCGImageAtTime(CMTimeMake(0, 1), actualTime: nil, error: &err)
-        // !! check the error before proceeding
-        if (err != nil) {
-//
-//        let imageView = UIImageView(image: uiImage)
-          println("ERROR: Can't make video Thumbnail")
-            return nil
-        } else {
-            let uiImage = UIImage(CGImage: cgImage)
-            var data = UIImagePNGRepresentation(uiImage)
-            return data
-        }
-    }
+//    func getVideoThumbnail(url: NSURL) -> NSData? {
+//        var err: NSError? = nil
+//        let asset = AVURLAsset(URL: url, options: nil)
+//        let imgGenerator = AVAssetImageGenerator(asset: asset)
+//        let cgImage = imgGenerator.copyCGImageAtTime(CMTimeMake(0, 1), actualTime: nil, error: &err)
+//        // !! check the error before proceeding
+//        if (err != nil) {
+////
+////        let imageView = UIImageView(image: uiImage)
+//          println("ERROR: Can't make video Thumbnail")
+//            return nil
+//        } else {
+//            let uiImage = UIImage(CGImage: cgImage)
+//            var data = UIImagePNGRepresentation(uiImage)
+//            return data
+//        }
+//    }
 }
 
 

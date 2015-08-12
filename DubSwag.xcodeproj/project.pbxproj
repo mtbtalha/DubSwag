@@ -14,6 +14,10 @@
 		9473D87C1B6FA22A00B076ED /* SelectVideoFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473D87B1B6FA22A00B076ED /* SelectVideoFromViewController.swift */; };
 		9473D87E1B6FAA0300B076ED /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473D87D1B6FAA0300B076ED /* Router.swift */; };
 		9473D8821B6FBAAE00B076ED /* FBUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473D8811B6FBAAE00B076ED /* FBUtility.swift */; };
+		949377221B78EF5500D0A033 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949377211B78EF5500D0A033 /* MediaManager.swift */; };
+		949377281B7A02A800D0A033 /* AVMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949377271B7A02A800D0A033 /* AVMerger.swift */; };
+		9493772A1B7B55CE00D0A033 /* PlaySmashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949377291B7B55CE00D0A033 /* PlaySmashViewController.swift */; };
+		9493772E1B7B935A00D0A033 /* Smash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493772D1B7B935A00D0A033 /* Smash.swift */; };
 		949F687A1B6A76F900C9AD48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949F68791B6A76F900C9AD48 /* AppDelegate.swift */; };
 		949F687C1B6A76F900C9AD48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949F687B1B6A76F900C9AD48 /* ViewController.swift */; };
 		949F687F1B6A76F900C9AD48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949F687D1B6A76F900C9AD48 /* Main.storyboard */; };
@@ -32,7 +36,7 @@
 		94CD56C21B74B9DA007EDEF6 /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CD56C11B74B9DA007EDEF6 /* PlayVideoViewController.swift */; };
 		94CD56C41B74F87F007EDEF6 /* RecordSmashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CD56C31B74F87F007EDEF6 /* RecordSmashViewController.swift */; };
 		94CD56C61B74F894007EDEF6 /* RecordSmash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94CD56C51B74F894007EDEF6 /* RecordSmash.storyboard */; };
-		CADC758854B5D995CDBCA592 /* Pods_DubSwag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE763930AD631C869467C664 /* Pods_DubSwag.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BF2BD44FA9DED10A83814985 /* libPods-DubSwag.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8F0CE5704C3A7C5326CA08 /* libPods-DubSwag.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		4F7CCAAF116F02900487F269 /* Pods-DubSwag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DubSwag.release.xcconfig"; path = "Pods/Target Support Files/Pods-DubSwag/Pods-DubSwag.release.xcconfig"; sourceTree = "<group>"; };
+		5D8F0CE5704C3A7C5326CA08 /* libPods-DubSwag.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DubSwag.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E49E3AF911E7285CCD65770 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9416AA8F1B70CBCF00EB57A3 /* NavigationDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDrawerViewController.swift; sourceTree = "<group>"; };
 		9473D8761B6F8D0800B076ED /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
@@ -54,6 +59,10 @@
 		9473D87B1B6FA22A00B076ED /* SelectVideoFromViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectVideoFromViewController.swift; sourceTree = "<group>"; };
 		9473D87D1B6FAA0300B076ED /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		9473D8811B6FBAAE00B076ED /* FBUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUtility.swift; sourceTree = "<group>"; };
+		949377211B78EF5500D0A033 /* MediaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
+		949377271B7A02A800D0A033 /* AVMerger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVMerger.swift; sourceTree = "<group>"; };
+		949377291B7B55CE00D0A033 /* PlaySmashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySmashViewController.swift; sourceTree = "<group>"; };
+		9493772D1B7B935A00D0A033 /* Smash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Smash.swift; sourceTree = "<group>"; };
 		949F68741B6A76F900C9AD48 /* DubSwag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubSwag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949F68781B6A76F900C9AD48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		949F68791B6A76F900C9AD48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +73,7 @@
 		949F68891B6A76F900C9AD48 /* DubSwagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DubSwagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		949F688E1B6A76F900C9AD48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		949F688F1B6A76F900C9AD48 /* DubSwagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DubSwagTests.swift; sourceTree = "<group>"; };
-		949F68991B6B5EAB00C9AD48 /* DugSwag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DugSwag-Bridging-Header.h"; sourceTree = "<group>"; };
+		949F68991B6B5EAB00C9AD48 /* DugSwag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DugSwag-Bridging-Header.h"; path = "DubSwagTests/DugSwag-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		94CD56AF1B723FF5007EDEF6 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		94CD56B11B724F2A007EDEF6 /* CategorySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewController.swift; sourceTree = "<group>"; };
 		94CD56B31B735E92007EDEF6 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -78,7 +87,6 @@
 		94CD56C31B74F87F007EDEF6 /* RecordSmashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSmashViewController.swift; sourceTree = "<group>"; };
 		94CD56C51B74F894007EDEF6 /* RecordSmash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RecordSmash.storyboard; sourceTree = "<group>"; };
 		B0E23DC67E58CEAC17368BCC /* Pods-DubSwag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DubSwag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DubSwag/Pods-DubSwag.debug.xcconfig"; sourceTree = "<group>"; };
-		DE763930AD631C869467C664 /* Pods_DubSwag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DubSwag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +96,7 @@
 			files = (
 				076E37DA9C7CCBFD423B8EEE /* libPods.a in Frameworks */,
 				9473D8781B6F8D0800B076ED /* ParseFacebookUtilsV4.framework in Frameworks */,
-				CADC758854B5D995CDBCA592 /* Pods_DubSwag.framework in Frameworks */,
+				BF2BD44FA9DED10A83814985 /* libPods-DubSwag.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +113,7 @@
 		949F686B1B6A76F900C9AD48 = {
 			isa = PBXGroup;
 			children = (
+				949377271B7A02A800D0A033 /* AVMerger.swift */,
 				949F68761B6A76F900C9AD48 /* DubSwag */,
 				949F688C1B6A76F900C9AD48 /* DubSwagTests */,
 				949F68751B6A76F900C9AD48 /* Products */,
@@ -128,8 +137,10 @@
 				949F68791B6A76F900C9AD48 /* AppDelegate.swift */,
 				94CD56BF1B749CB5007EDEF6 /* PlayVideo.storyboard */,
 				94CD56C31B74F87F007EDEF6 /* RecordSmashViewController.swift */,
+				949377291B7B55CE00D0A033 /* PlaySmashViewController.swift */,
 				94CD56C51B74F894007EDEF6 /* RecordSmash.storyboard */,
 				94CD56C11B74B9DA007EDEF6 /* PlayVideoViewController.swift */,
+				949377211B78EF5500D0A033 /* MediaManager.swift */,
 				9473D8811B6FBAAE00B076ED /* FBUtility.swift */,
 				949F687B1B6A76F900C9AD48 /* ViewController.swift */,
 				9473D87D1B6FAA0300B076ED /* Router.swift */,
@@ -142,6 +153,7 @@
 				94CD56BD1B73AF0C007EDEF6 /* UserVideos.swift */,
 				9416AA8F1B70CBCF00EB57A3 /* NavigationDrawerViewController.swift */,
 				9473D87B1B6FA22A00B076ED /* SelectVideoFromViewController.swift */,
+				9493772D1B7B935A00D0A033 /* Smash.swift */,
 				94CD56B51B73718C007EDEF6 /* ParseManager.swift */,
 				94CD56B31B735E92007EDEF6 /* Category.swift */,
 				94CD56AF1B723FF5007EDEF6 /* DataManager.swift */,
@@ -155,6 +167,7 @@
 		949F68771B6A76F900C9AD48 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				949F68991B6B5EAB00C9AD48 /* DugSwag-Bridging-Header.h */,
 				949F68781B6A76F900C9AD48 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -172,7 +185,6 @@
 		949F688D1B6A76F900C9AD48 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				949F68991B6B5EAB00C9AD48 /* DugSwag-Bridging-Header.h */,
 				949F688E1B6A76F900C9AD48 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -192,7 +204,7 @@
 			children = (
 				9473D8761B6F8D0800B076ED /* ParseFacebookUtilsV4.framework */,
 				5E49E3AF911E7285CCD65770 /* libPods.a */,
-				DE763930AD631C869467C664 /* Pods_DubSwag.framework */,
+				5D8F0CE5704C3A7C5326CA08 /* libPods-DubSwag.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,7 +221,6 @@
 				949F68711B6A76F900C9AD48 /* Frameworks */,
 				949F68721B6A76F900C9AD48 /* Resources */,
 				F6EB673A3E8C8E7296D9141F /* Copy Pods Resources */,
-				48BA0C2B9296EAAFAFB98793 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,21 +311,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		48BA0C2B9296EAAFAFB98793 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DubSwag/Pods-DubSwag-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C7EE6A5E70A4ADD92D131E03 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,12 +350,16 @@
 			files = (
 				9473D87E1B6FAA0300B076ED /* Router.swift in Sources */,
 				94CD56BA1B73AB79007EDEF6 /* ListofCategoryVideosViewController.swift in Sources */,
+				9493772E1B7B935A00D0A033 /* Smash.swift in Sources */,
 				94CD56BE1B73AF0C007EDEF6 /* UserVideos.swift in Sources */,
 				94CD56B61B73718C007EDEF6 /* ParseManager.swift in Sources */,
 				9416AA901B70CBCF00EB57A3 /* NavigationDrawerViewController.swift in Sources */,
 				949F687C1B6A76F900C9AD48 /* ViewController.swift in Sources */,
+				949377281B7A02A800D0A033 /* AVMerger.swift in Sources */,
 				94CD56BC1B73ABDF007EDEF6 /* VideoTableViewCell.swift in Sources */,
 				94CD56B21B724F2A007EDEF6 /* CategorySelectionViewController.swift in Sources */,
+				9493772A1B7B55CE00D0A033 /* PlaySmashViewController.swift in Sources */,
+				949377221B78EF5500D0A033 /* MediaManager.swift in Sources */,
 				94CD56B01B723FF5007EDEF6 /* DataManager.swift in Sources */,
 				94CD56B41B735E92007EDEF6 /* Category.swift in Sources */,
 				9473D8821B6FBAAE00B076ED /* FBUtility.swift in Sources */,

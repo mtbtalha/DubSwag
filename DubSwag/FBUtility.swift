@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import FBSDKCoreKit
-import FBSDKLoginKit
+
 
 class FBUtility: NSObject {
     

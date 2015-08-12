@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Parse
+
 
 
 class ListofCategoryVideosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -20,6 +20,7 @@ class ListofCategoryVideosViewController: UIViewController, UITableViewDataSourc
         tableView.dataSource = self
         tableView.delegate = self
         // Do any additional setup after loading the view.
+       
         ParseManager.getUserVideos(self.categoryId!) { (objects) -> () in
             for object in objects {
                 var userVideo = UserVideos(videoObject: object)

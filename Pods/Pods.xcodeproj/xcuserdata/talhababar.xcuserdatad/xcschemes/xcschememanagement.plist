@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-DubSwag-EZAudio.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-DubSwag-FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -44,12 +49,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-DubSwag-Player.xcscheme</key>
+		<key>Pods-DubSwag-SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-DubSwag-SDWebImage.xcscheme</key>
+		<key>Pods-DubSwag-TPCircularBuffer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -62,57 +67,62 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>023C3F2D31F79771EB272636</key>
+		<key>0B110E488A51F2ECF1FBBE12</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0CE29E055322822EE7F31380</key>
+		<key>0FA63EAD0C9CF48A0D12EA3F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>171538B45E5871DDCEDD0D80</key>
+		<key>1BEC31D4283F28232A48C7C3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>20BA5F1414E6E264707B0622</key>
+		<key>3F3FC6923172957C82F025EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>33B79153A04E050F9A22D19B</key>
+		<key>406A8CA183FAF0372CA5C221</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>51E5B12FC978D6AF0E345790</key>
+		<key>43984FEC1E403995E665C359</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6970C087BA334BCA76E1ED90</key>
+		<key>4B81186C9EB82F672740EE2D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>741D878C074DCDC2F0869D09</key>
+		<key>5DA172A9CD754F47D90C7A20</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC5C4F51E7E26367983BEC1F</key>
+		<key>9B5E8FA62B655A14DBDB9FED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CCC5347DF898773CB50DC064</key>
+		<key>9C94C4530889B3D6B9070D25</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CF6549DB0DB0606DF07B1FA2</key>
+		<key>C0C38C966BE6646345F9EA28</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C6AD0D8776F27383D12CF648</key>
 		<dict>
 			<key>primary</key>
 			<true/>

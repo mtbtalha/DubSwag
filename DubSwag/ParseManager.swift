@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Parse
+
 
 class ParseManager: NSObject {
     static func uploadFile(data: NSData,fileName: String,success: (PFObject) ->  ()) {
@@ -33,6 +33,16 @@ class ParseManager: NSObject {
         videoObject["thumbnailURL"] = thumbnailURL
         videoObject.saveInBackground()
     }
+    
+    static func uploadSmashes(userId: String, smashURL: String, thumbnailURL: String, smashName: String) {
+        var videoObject = PFObject(className:"Smashes")
+        videoObject["smashName"] = smashName
+        videoObject["userId"] = userId
+        videoObject["smashURL"] = smashURL
+        videoObject["thumbnailURL"] = thumbnailURL
+        videoObject.saveInBackground()
+    }
+    
     
     static func getCategories(success: ([PFObject]) ->  ()) {
         var query = PFQuery(className:"Categories")

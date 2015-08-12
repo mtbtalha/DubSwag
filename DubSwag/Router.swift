@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MMDrawerController
 
 class Router: NSObject {
     
@@ -62,9 +61,17 @@ class Router: NSObject {
         fromViewController.navigationController?.pushViewController(vc, animated: true )
     }
 
-    static func showRecordSmashViewController(fromViewController: UIViewController){
+    static func showRecordSmashViewController(fromViewController: UIViewController, videoURL: NSURL){
         let mainStoryboard = UIStoryboard(name: "RecordSmash", bundle: NSBundle.mainBundle())
         let vc = mainStoryboard.instantiateViewControllerWithIdentifier("RecordSmashViewController") as! RecordSmashViewController
+        vc.videoURL = videoURL
+        fromViewController.navigationController?.pushViewController(vc, animated: true )
+    }
+    
+    static func showPlaySmashViewController(fromViewController: UIViewController, smashURL: NSURL){
+        let mainStoryboard = UIStoryboard(name: "RecordSmash", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("PlaySmashViewController") as! PlaySmashViewController
+        vc.smashURL = smashURL
         fromViewController.navigationController?.pushViewController(vc, animated: true )
     }
 }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Parse
+
 
 class Category: NSObject {
     let categoryId: String?
