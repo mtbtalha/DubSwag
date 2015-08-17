@@ -31,7 +31,6 @@ class Router: NSObject {
         
         appDelegate.centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView;
         appDelegate.centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.PanningCenterView;
-        
         appDelegate.window!.rootViewController = appDelegate.centerContainer
         appDelegate.window!.makeKeyAndVisible()
 

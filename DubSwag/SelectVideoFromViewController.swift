@@ -147,6 +147,9 @@ class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDel
     func pushViewControllerForIndexPath(indexPathRow: Int) {
         switch(indexPathRow){
         case 0:
+            var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.centerContainer?.closeDrawerAnimated(true, completion: { (BOO) -> Void in
+            })
             Router.showNewsFeedViewController(self)
         case 1:
             Router.showNewsFeedViewController(self, onlyMySmash: true)
