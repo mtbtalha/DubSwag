@@ -12,10 +12,13 @@ import UIKit
 class NavigationDrawerViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableviewHeight: NSLayoutConstraint!
-    var fbUtility = FBUtility()
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var fbLoginButton: FBSDKLoginButton!
+    
+    var fbUtility = FBUtility()
+    var delegate: SelectionFromDrawerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController!.navigationBar.hidden = true
@@ -34,6 +37,9 @@ class NavigationDrawerViewController: UIViewController,UITableViewDelegate,UITab
     }
     
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.delegate?.pushViewControllerForIndexPath(indexPath.row)
+    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }

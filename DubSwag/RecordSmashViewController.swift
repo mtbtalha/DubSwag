@@ -43,6 +43,7 @@ class RecordSmashViewController: UIViewController, EZMicrophoneDelegate, EZRecor
     var videoExtension: String?
     var audioOutputFilePath: NSURL?
     var smashURL: NSURL?
+    var newSmashURL: NSURL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -163,14 +164,21 @@ class RecordSmashViewController: UIViewController, EZMicrophoneDelegate, EZRecor
     
     func exportDidEnd() {
         self.progressHUD.hidden = true
-        if let smashURL = self.smashURL
-        {
-        Router.showPlaySmashViewController(self, smashURL: smashURL)
-        }
-        else
-        {
-            println("ERROR: No URL of smash")
-        }
+        println("Exported once")
+        Router.showPlaySmashViewController(self, smashURL: smashURL!)
+
+//        if let smashURL = self.newSmashURL
+//        {
+//        Router.showPlaySmashViewController(self, smashURL: smashURL)
+//        }
+//        else
+//        {
+//           // println("ERROR: No URL of smash")
+//            var merge2videos = AVMerger(audioURL: audioOutputFilePath!, videoURL: videoURL)
+//            merge2videos.mergeVideos(videoURL!, smackURL: smashURL!)
+//            newSmashURL = merge2videos.exportEditedVideo(self, shouldSaveToLibrary: false)
+//
+//        }
     }
     
 }

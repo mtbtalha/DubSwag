@@ -45,6 +45,11 @@ class PlaySmashViewController: UIViewController {
         var smashData = NSFileManager().contentsAtPath(smashURLString!)
         var smashName = self.getSmashName()
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
+            ParseManager.uploadFile(thumbnailData!, fileName: thumbnailName, success: { (file) -> () in
+                var imageFile = file["File"] as! PFFile
+                self.uploadedThumbnailURL = imageFile.url
+                println(imageFile.url)
+            })
             ParseManager.uploadFile(smashData!, fileName: smashName, success: { (file) -> () in
             var videoFile = file["File"] as! PFFile
             self.uploadedSmashURL = videoFile.url
@@ -59,11 +64,7 @@ class PlaySmashViewController: UIViewController {
                     println("NO User")
                 }
                 })
-            ParseManager.uploadFile(thumbnailData!, fileName: thumbnailName, success: { (file) -> () in
-                    var imageFile = file["File"] as! PFFile
-                    self.uploadedThumbnailURL = imageFile.url
-                    println(imageFile.url)
-            })
+            
             
         }
     }

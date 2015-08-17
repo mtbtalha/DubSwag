@@ -17,6 +17,8 @@ protocol AVMergerDelegate {
 class AVMerger: NSObject {
     private var videoAsset: AVURLAsset?
     private var audioAsset: AVURLAsset?
+    private var smackAsset: AVURLAsset?
+    private var smashAsset: AVURLAsset?
     private var mixComposition = AVMutableComposition()
     private var assetExport: AVAssetExportSession?
     var delegate: AVMergerDelegate?
@@ -30,6 +32,11 @@ class AVMerger: NSObject {
         audioURL = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource(audioName as String, ofType: audioType as String)!)
         videoURL = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource(videoName as String, ofType: videoType as String)!)
         
+    }
+    
+    override init() {
+        self.audioURL = nil
+        self.videoURL = nil
     }
     
     init(audioURL: NSURL, videoURL: NSURL) {
@@ -132,5 +139,54 @@ class AVMerger: NSObject {
         })
 
     }
+    
+    func mergeVideos(smashURL: NSURL, smackURL: NSURL) {
+        var currentCMTime = kCMTimeZero
+        smashAsset = AVURLAsset(URL: smashURL, options: nil)
+        var smashTimeRange = CMTimeRange(start: kCMTimeZero, duration: smashAsset!.duration)
+        var smashAudioTrack = self.mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio, preferredTrackID: CMPersistentTrackID())
+       smashAudioTrack.insertTimeRange(smashTimeRange, ofTrack: smashAsset!.tracksWithMediaType(AVMediaTypeAudio)[0] as! AVAssetTrack, atTime: kCMTimeZero, error: nil)
+        var smashVideoTrack = self.mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo, preferredTrackID: CMPersistentTrackID())
+        smashVideoTrack.insertTimeRange(smashTimeRange, ofTrack: smashAsset!.tracksWithMediaType(AVMediaTypeVideo)[0] as! AVAssetTrack, atTime: kCMTimeZero, error: nil)
+        currentCMTime = CMTimeAdd(currentCMTime, smashAsset!.duration)
+        smackAsset = AVURLAsset(URL: smackURL, options: nil)
+        var smackTimeRange = CMTimeRange(start: kCMTimeZero, duration: smackAsset!.duration)
+        var smackAudioTrack = self.mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio, preferredTrackID: CMPersistentTrackID())
+        smackAudioTrack.insertTimeRange(smackTimeRange, ofTrack: smackAsset!.tracksWithMediaType(AVMediaTypeAudio)[0] as! AVAssetTrack, atTime: currentCMTime, error: nil)
+        var smackVideoTrack = self.mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo, preferredTrackID: CMPersistentTrackID())
+        smackVideoTrack.insertTimeRange(smackTimeRange, ofTrack: smackAsset!.tracksWithMediaType(AVMediaTypeVideo)[0] as! AVAssetTrack, atTime: currentCMTime, error: nil)
+        
+     }
+    
+    func createSmack(smackURL: NSURL) -> NSURL {
+        smackAsset = AVURLAsset(URL: smackURL, options: nil)
+        var duration = CMTimeMake(5, 1)
+        var smackTimeRange = CMTimeRange(start: kCMTimeZero, duration: duration)
+        var smackAudioTrack = self.mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio, preferredTrackID: CMPersistentTrackID())
+        smackAudioTrack.insertTimeRange(smackTimeRange, ofTrack: smackAsset!.tracksWithMediaType(AVMediaTypeAudio)[0] as! AVAssetTrack, atTime: kCMTimeZero, error: nil)
+        var smackVideoTrack = self.mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo, preferredTrackID: CMPersistentTrackID())
+        smackVideoTrack.insertTimeRange(smackTimeRange, ofTrack: smackAsset!.tracksWithMediaType(AVMediaTypeVideo)[0] as! AVAssetTrack, atTime: kCMTimeZero, error: nil)
+        var dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        var docsDir = dirPath[0] as! NSString
+        var videoName = smackURL.lastPathComponent
+        var outputFilePth = docsDir.stringByAppendingPathComponent("\(videoName!.stringByDeletingPathExtension).\(videoName!.pathExtension)")
+        var outputSmackURL = NSURL.fileURLWithPath(outputFilePth)
+        if (NSFileManager.defaultManager().fileExistsAtPath(outputFilePth)) {
+            NSFileManager.defaultManager().removeItemAtPath(outputFilePth, error: nil)
+        }
+        assetExport = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetMediumQuality)
+        assetExport!.outputFileType = "com.apple.quicktime-movie"
+        assetExport!.outputURL = outputSmackURL
+        
+        assetExport!.exportAsynchronouslyWithCompletionHandler({
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
+                println("Smack Exported")
+                self.delegate?.exportDidEnd()
+            })
+        })
+        return outputSmackURL!
+    }
+    
 
 }

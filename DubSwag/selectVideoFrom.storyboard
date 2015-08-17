@@ -120,6 +120,110 @@
             </objects>
             <point key="canvasLocation" x="2616" y="1412"/>
         </scene>
+        <!--News Feed View Controller-->
+        <scene sceneID="sJI-GI-Bof">
+            <objects>
+                <viewController storyboardIdentifier="NewsFeedViewController" id="Abm-Gz-vfY" customClass="NewsFeedViewController" customModule="DubSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nf9-cV-34f"/>
+                        <viewControllerLayoutGuide type="bottom" id="xpv-Fh-otl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Wi-fS-fRC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="251" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5Eh-eU-viz">
+                                <rect key="frame" x="0.0" y="28" width="320" height="540"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeedCellIdentifier" rowHeight="251" id="9ij-sZ-TZA" customClass="FeedTableViewCell" customModule="DubSwag" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9ij-sZ-TZA" id="rvO-pj-p4W">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkZ-4p-kzF">
+                                                    <rect key="frame" x="8" y="12" width="82" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="clx-Hm-68Q">
+                                                    <rect key="frame" x="169" y="207" width="151" height="43"/>
+                                                    <state key="normal" title="Like">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="likeButtonTapeed:" destination="9ij-sZ-TZA" eventType="touchUpInside" id="NYU-1F-pQK"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="CbP-dF-IJZ">
+                                                    <rect key="frame" x="8" y="207" width="153" height="35"/>
+                                                    <state key="normal" title="Play"/>
+                                                    <connections>
+                                                        <action selector="playButtonTapped:" destination="9ij-sZ-TZA" eventType="touchUpInside" id="jns-h1-fel"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Crd-GB-fdt">
+                                                    <rect key="frame" x="0.0" y="41" width="320" height="145"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number Of Likes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWx-fO-Jxe">
+                                                    <rect key="frame" x="169" y="194" width="130" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="likeButton" destination="clx-Hm-68Q" id="TOz-qW-gSL"/>
+                                            <outlet property="likesLabel" destination="hWx-fO-Jxe" id="nt0-R2-apC"/>
+                                            <outlet property="playButton" destination="CbP-dF-IJZ" id="qqU-LV-lUx"/>
+                                            <outlet property="thumbnailImageView" destination="Crd-GB-fdt" id="Wxa-hp-M7c"/>
+                                            <outlet property="usernameLabel" destination="NkZ-4p-kzF" id="qVo-t6-jKv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="5Eh-eU-viz" id="8te-AM-Q5A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xN1-yK-2BS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2616" y="2052"/>
+        </scene>
+        <!--Play Feed Smack View Controller-->
+        <scene sceneID="4jY-BQ-Ofp">
+            <objects>
+                <viewController storyboardIdentifier="PlayFeedSmackViewController" id="aWW-Kc-x5m" customClass="PlayFeedSmackViewController" customModule="DubSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TSc-Ug-mP8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ur9-m1-yJC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HHK-bg-ksm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioY-dJ-fih">
+                                <rect key="frame" x="0.0" y="138" width="320" height="242"/>
+                                <color key="backgroundColor" red="0.15686677630000001" green="0.4371659128" blue="0.92097553450000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="playerView" destination="ioY-dJ-fih" id="NDs-hy-64V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhQ-5x-fP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3017" y="2052"/>
+        </scene>
         <!--Category Selection-->
         <scene sceneID="LTo-4g-cDE">
             <objects>

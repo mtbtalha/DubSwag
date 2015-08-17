@@ -34,12 +34,13 @@ class ParseManager: NSObject {
         videoObject.saveInBackground()
     }
     
-    static func uploadSmashes(userId: String, smashURL: String, thumbnailURL: String, smashName: String) {
+    static func uploadSmashes(userId: String, smashURL: String, thumbnailURL: String, smashName: String, likes : Int = 0) {
         var videoObject = PFObject(className:"Smashes")
         videoObject["smashName"] = smashName
         videoObject["userId"] = userId
         videoObject["smashURL"] = smashURL
         videoObject["thumbnailURL"] = thumbnailURL
+        videoObject["likes"] = likes
         videoObject.saveInBackground()
     }
     
@@ -59,6 +60,12 @@ class ParseManager: NSObject {
         }
     }
     
+    static func updateSmashLikes(smashId: String, likes: Int){
+        var smashObject = PFObject(withoutDataWithClassName: "Smashes", objectId: smashId)
+        smashObject.setValue(likes, forKey: "likes")
+        smashObject.saveInBackground()
+    }
+    
     static func getUserVideos(categoryId: String, success: ([PFObject]) -> ()){
         var query = PFQuery(className: "User_Videos")
         query.whereKey("categoryId", equalTo:categoryId)
@@ -73,6 +80,80 @@ class ParseManager: NSObject {
                 println("Error: \(error!) \(error!.userInfo!)")
             }
         }
-        
+    }
+    
+    static func getUser(success: (PFObject) -> ()){
+        var user = PFUser.currentUser()
+        if let pfUser = user
+        {
+            var query = PFQuery(className:"_User")
+            query.whereKey("objectId", equalTo:pfUser.objectId!)
+            query.findObjectsInBackgroundWithBlock {
+                (objects: [AnyObject]?, error: NSError?) -> Void in
+                if error == nil {
+                    if let objects = objects as? [PFObject] {
+                        for object in objects {
+                            println("I am here")
+                           success(object)
+                        }
+                    }
+                } else {
+                    // Log details of the failure
+                    println("Error: \(error!) \(error!.userInfo!)")
+                }
+            }
+
+        }
+    }
+    
+    static func getSmashes(success: ([PFObject]) ->  ()) {
+        var query = PFQuery(className:"Smashes")
+        query.limit = 100
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                success(objects as! [PFObject])
+            } else {
+                // Log details of the failure
+                println("Error: \(error!) \(error!.userInfo!)")
+            }
+        }
+    }
+    
+    static func getMySmashes(success: ([PFObject]) ->  ()) {
+        var query = PFQuery(className:"Smashes")
+        query.whereKey("userId", equalTo: PFUser.currentUser()!.objectId!)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                success(objects as! [PFObject])
+            } else {
+                // Log details of the failure
+                println("Error: \(error!) \(error!.userInfo!)")
+            }
+        }
+    }
+    
+    
+    
+    static func getUserForId(userId: String,success: (PFObject) -> ()){
+            var query = PFQuery(className:"_User")
+            query.whereKey("objectId", equalTo:userId)
+            query.findObjectsInBackgroundWithBlock {
+                (objects: [AnyObject]?, error: NSError?) -> Void in
+                if error == nil {
+                    if let objects = objects as? [PFObject] {
+                        for object in objects {
+                            println("I am here")
+                            success(object)
+                        }
+                    }
+                } else {
+                    // Log details of the failure
+                    println("Error: \(error!) \(error!.userInfo!)")
+                }
+            }
     }
 }

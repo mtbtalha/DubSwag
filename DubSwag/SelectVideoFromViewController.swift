@@ -10,18 +10,33 @@ import UIKit
 import MobileCoreServices
 import AVFoundation
 
+protocol SelectionFromDrawerDelegate {
+    func pushViewControllerForIndexPath(indexPathRow: Int)
+}
 
 protocol CategorySelectionDelegate {
     func categoryDidSelect(category: Category)
 }
 
-class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, CategorySelectionDelegate {
+class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, CategorySelectionDelegate, SelectionFromDrawerDelegate {
 
     var videoFileURL: String?
     var thumbnailFileURL: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        ParseManager.getUser { (user) -> () in
+//            if (user["smackURL"] as? String == nil) {
+//                let alert = UIAlertController(title: "Create MySmack",
+//                        message: "Please Create MySmack first.",
+//                        preferredStyle: UIAlertControllerStyle.Alert)
+//                    let actionNo = UIAlertAction(title: "OK", style: .Default) { (alertAction) -> Void in
+//                        Router.showCreateMySmackViewController(self)
+//                    }
+//                    alert.addAction(actionNo)
+//                    self.presentViewController(alert, animated: true,
+//                        completion: nil)
+//            }
+//        }
         // Do any additional setup after loading the view.
     }
     @IBAction func selectVideoFromServerTapped(sender: AnyObject) {
@@ -125,23 +140,18 @@ class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDel
         }
     }
     
-//    func getVideoThumbnail(url: NSURL) -> NSData? {
-//        var err: NSError? = nil
-//        let asset = AVURLAsset(URL: url, options: nil)
-//        let imgGenerator = AVAssetImageGenerator(asset: asset)
-//        let cgImage = imgGenerator.copyCGImageAtTime(CMTimeMake(0, 1), actualTime: nil, error: &err)
-//        // !! check the error before proceeding
-//        if (err != nil) {
-////
-////        let imageView = UIImageView(image: uiImage)
-//          println("ERROR: Can't make video Thumbnail")
-//            return nil
-//        } else {
-//            let uiImage = UIImage(CGImage: cgImage)
-//            var data = UIImagePNGRepresentation(uiImage)
-//            return data
-//        }
-//    }
+    func pushViewControllerForIndexPath(indexPathRow: Int) {
+        switch(indexPathRow){
+        case 0:
+            Router.showNewsFeedViewController(self)
+        case 1:
+            Router.showNewsFeedViewController(self, onlyMySmash: true)
+        case 2:
+            println("2")
+        default:
+            println("Default of Drawer")
+        }
+    }
 }
 
 
