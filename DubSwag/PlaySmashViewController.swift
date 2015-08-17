@@ -56,10 +56,12 @@ class PlaySmashViewController: UIViewController {
             println(videoFile.url)
             var user = PFUser.currentUser()
                 if user != nil {
-                    ParseManager.uploadSmashes(user!.objectId!, smashURL: self.uploadedSmashURL, thumbnailURL: self.uploadedThumbnailURL!, smashName: smashName)
+                    FBUtility.getFbUsername { (username) -> () in
+                        ParseManager.uploadSmashes(user!.objectId!, smashURL: self.uploadedSmashURL, thumbnailURL: self.uploadedThumbnailURL!, smashName: smashName, userName: username)
                     println("Smash Uploaded")
                     progressHUD.hide(true)
                     Router.showSelectVideoFromViewController(self)
+                    }
                 } else {
                     println("NO User")
                 }

@@ -37,6 +37,10 @@ class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDel
 //                        completion: nil)
 //            }
 //        }
+        
+        FBUtility.getFbUsername { (username) -> () in
+            ParseManager.updateUserName(username)
+        }
         // Do any additional setup after loading the view.
     }
     @IBAction func selectVideoFromServerTapped(sender: AnyObject) {

@@ -34,13 +34,14 @@ class ParseManager: NSObject {
         videoObject.saveInBackground()
     }
     
-    static func uploadSmashes(userId: String, smashURL: String, thumbnailURL: String, smashName: String, likes : Int = 0) {
+    static func uploadSmashes(userId: String, smashURL: String, thumbnailURL: String, smashName: String,userName: String ,likes : Int = 0) {
         var videoObject = PFObject(className:"Smashes")
         videoObject["smashName"] = smashName
         videoObject["userId"] = userId
         videoObject["smashURL"] = smashURL
         videoObject["thumbnailURL"] = thumbnailURL
         videoObject["likes"] = likes
+        videoObject["userName"] = userName
         videoObject.saveInBackground()
     }
     
@@ -66,6 +67,13 @@ class ParseManager: NSObject {
         smashObject.saveInBackground()
     }
     
+    
+    static func updateUserName(userName: String){
+        var userObject = PFObject(withoutDataWithClassName: "_User", objectId: PFUser.currentUser()!.objectId!)
+        userObject.setValue(userName, forKey: "userName")
+        userObject.saveInBackground()
+    }
+    
     static func getUserVideos(categoryId: String, success: ([PFObject]) -> ()){
         var query = PFQuery(className: "User_Videos")
         query.whereKey("categoryId", equalTo:categoryId)
@@ -81,6 +89,8 @@ class ParseManager: NSObject {
             }
         }
     }
+    
+    
     
     static func getUser(success: (PFObject) -> ()){
         var user = PFUser.currentUser()

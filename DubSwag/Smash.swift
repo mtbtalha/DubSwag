@@ -16,6 +16,7 @@ class Smash: NSObject {
     var smashName: String?
     var smashId: String?
     var likes: Int!
+    var userName: String!
     
     init(videoObject: PFObject) {
         self.smashName = videoObject["smashName"] as? String
@@ -24,6 +25,7 @@ class Smash: NSObject {
         self.smashURL = videoObject["smashURL"] as? String
         self.thumbnailURL = videoObject["thumbnailURL"] as? String
         self.likes = videoObject["likes"] as! Int
+        self.userName = videoObject["userName"] as! String
     }
 
 }

@@ -23,8 +23,8 @@ class PlayFeedSmackViewController: UIViewController {
         var smashURL = NSURL(string: smashURLString)
         println("\(smashURL!)")
        moviePlayer = MediaManager.loadMoviePlayer(smashURL!, playerView: playerView)
-       // moviePlayer.controlStyle = MPMovieControlStyle.Embedded
-        moviePlayer.play()
+       moviePlayer.controlStyle = MPMovieControlStyle.Embedded
+        //moviePlayer.play()
     }
 
 }

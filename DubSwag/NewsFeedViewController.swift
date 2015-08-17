@@ -66,8 +66,8 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         let smashObject = smashes[indexPath.row]
         var thumbnailURL = NSURL(string: smashObject.thumbnailURL!)
         cell.thumbnailImageView.sd_setImageWithURL(thumbnailURL!)
-        cell.usernameLabel.hidden = true
-        cell.likesLabel.text = "\(smashObject.likes)"
+        cell.usernameLabel.text = smashObject.userName
+        cell.likesLabel.text = "\(smashObject.likes) like"
         return cell
     }
     
@@ -78,7 +78,7 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     func likesUpdatedAtCell(indexPathRow: NSIndexPath) {
         var cell = tableView.cellForRowAtIndexPath(indexPathRow) as! FeedTableViewCell
         let smashObject = smashes[indexPathRow.row]
-        cell.likesLabel.text = "\(smashObject.likes)"
+        cell.likesLabel.text = "\(smashObject.likes) like"
         
     }
 }
