@@ -123,6 +123,12 @@ class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDel
                 }
             }
             let actionNo = UIAlertAction(title: "No", style: .Default) { (alertAction) -> Void in
+                var videoCopiedToDocumentDirectoryURL = DataManager.saveVideoFromCameraRollToDocumentsDirectory(videoData)
+                var userVideoPFObject = PFObject(className: "User_Videos")
+                userVideoPFObject["VideoName"] = "video.mov"
+                userVideoPFObject["videoURL"] = videoCopiedToDocumentDirectoryURL.path!
+                var userVideo = UserVideos(videoObject: userVideoPFObject)
+                Router.showPlayVideoViewController(self, video: userVideo, UploadVideo: false)
             }
             alert.addAction(actionYes)
             alert.addAction(actionNo)
@@ -138,6 +144,14 @@ class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDel
         if user != nil {
             
             ParseManager.uploadUser_video(category.categoryId!, userId: user!.objectId!, videoURL: self.videoFileURL!, thumbnailURL: self.thumbnailFileURL!)
+            var userVideoPFObject = PFObject(className: "User_Videos")
+            userVideoPFObject["VideoName"] = "video.mov"
+            userVideoPFObject["categoryId"] = category.categoryId!
+            userVideoPFObject["userId"] = user!.objectId!
+            userVideoPFObject["videoURL"] = self.videoFileURL!
+            userVideoPFObject["thumbnailURL"] = self.thumbnailFileURL!
+            var userVideo = UserVideos(videoObject: userVideoPFObject)
+            Router.showPlayVideoViewController(self, video: userVideo)
             println("User_video Uploaded")
         } else {
             println("NO User")
@@ -152,6 +166,9 @@ class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDel
             })
             Router.showNewsFeedViewController(self)
         case 1:
+            var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.centerContainer?.closeDrawerAnimated(true, completion: { (BOO) -> Void in
+            })
             Router.showNewsFeedViewController(self, onlyMySmash: true)
         case 2:
             println("2")

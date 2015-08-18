@@ -118,6 +118,7 @@ class ParseManager: NSObject {
     
     static func getSmashes(success: ([PFObject]) ->  ()) {
         var query = PFQuery(className:"Smashes")
+        query.orderByDescending("createdAt")
         query.limit = 100
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in

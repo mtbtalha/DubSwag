@@ -21,6 +21,7 @@ class PlayVideoViewController: UIViewController, AVMergerDelegate {
     var videoURL: NSURL?
     var progressHUD: MBProgressHUD!
     var downloadedVideoURL: NSURL?
+    var uploadUserVideo: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,11 @@ class PlayVideoViewController: UIViewController, AVMergerDelegate {
             println(video.videoURL)
             activityIndicator.hidden = false
             activityIndicator.startAnimating()
+            if (uploadUserVideo == true) {
             videoURL = NSURL(string: video.videoURL!)
+            } else {
+            videoURL = NSURL(fileURLWithPath: video.videoURL!)
+            }
             moviePlayer = MediaManager.loadMoviePlayer(videoURL!, playerView: playerView)
             moviePlayer?.controlStyle = MPMovieControlStyle.Embedded
         }

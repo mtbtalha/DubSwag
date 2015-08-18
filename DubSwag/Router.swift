@@ -53,10 +53,11 @@ class Router: NSObject {
         fromViewController.navigationController?.pushViewController(vc, animated: true )
     }
     
-    static func showPlayVideoViewController(fromViewController: UIViewController, video: UserVideos){
+    static func showPlayVideoViewController(fromViewController: UIViewController, video: UserVideos, UploadVideo: Bool = true){
         let mainStoryboard = UIStoryboard(name: "PlayVideo", bundle: NSBundle.mainBundle())
         let vc = mainStoryboard.instantiateViewControllerWithIdentifier("PlayVideoViewController") as! PlayVideoViewController
         vc.video = video
+        vc.uploadUserVideo = UploadVideo
         fromViewController.navigationController?.pushViewController(vc, animated: true )
     }
 

@@ -59,4 +59,38 @@ class DataManager: NSObject {
             task.resume()
         }
     }
+//    
+//    NSData *data = UIImagePNGRepresentation(image);
+//    NSArray *UsrDocPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *DocsDir = [UsrDocPath objectAtIndex:0];
+//    NSString *path = [DocsDir stringByAppendingPathComponent:@"contents.png"];
+//    //Remove if necessary
+//    BOOL success = [FileManager fileExistsAtPath:path];
+//    if(success){
+//    [FileManager removeItemAtPath:path error:&error];
+//    }
+//    [data writeToFile:path atomically:YES];
+    
+    static func saveVideoFromCameraRollToDocumentsDirectory(videoData: NSData) -> NSURL {
+        var usrDocPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        var docsDir = usrDocPath[0] as! NSString
+        var path = docsDir.stringByAppendingPathComponent("videoToSmash.mov")
+        var alreadyExists = NSFileManager().fileExistsAtPath(path)
+        if alreadyExists {
+            NSFileManager().removeItemAtPath(path, error: nil)
+        }
+        videoData.writeToFile(path, atomically: true)
+        return NSURL(fileURLWithPath: path)!
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
