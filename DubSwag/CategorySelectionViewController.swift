@@ -18,7 +18,7 @@ class CategorySelectionViewController: UIViewController,UITableViewDelegate,UITa
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        getCategories { (objects) -> () in
+        ParseManager.getCategories { (objects) -> () in
             for object in objects {
                 var category = Category(category: object)
                 //println(category.categoryName)
@@ -28,37 +28,27 @@ class CategorySelectionViewController: UIViewController,UITableViewDelegate,UITa
         }
     }
     
-     func getCategories(success: ([PFObject]) ->  ()) {
-        var query = PFQuery(className:"Categories")
-        query.limit = 100
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
-            
-            if error == nil {
-                // The find succeeded.
-                println("Successfully retrieved \(objects!.count) Categories.")
-                // Do something with the found objects
-                
-                if let objects = objects as? [PFObject] {
-//                    for object in objects {
-//                        println(object["categoryName"] as! String)
-//                        
-//                    }
-                }
-            } else {
-                // Log details of the failure
-                println("Error: \(error!) \(error!.userInfo!)")
-            }
-            success(objects as! [PFObject])
-        }
-
-    }
+//     func getCategories(success: ([PFObject]) ->  ()) {
+//        var query = PFQuery(className:"Categories")
+//        query.limit = 100
+//        query.findObjectsInBackgroundWithBlock {
+//            (objects: [AnyObject]?, error: NSError?) -> Void in
+//            
+//            if error == nil {
+//                success(objects as! [PFObject])
+//            } else {
+//                // Log details of the failure
+//                println("Error: \(error!) \(error!.userInfo!)")
+//            }
+//        }
+//
+//    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let delegate = self.delegate {
-        self.delegate?.categoryDidSelect(categoryObjects[indexPath.row])
+        delegate.categoryDidSelect(categoryObjects[indexPath.row])
         } else {
-            
+        Router.showListOfCategoryVideosViewController(self, categoryId: categoryObjects[indexPath.row].categoryId!)
         }
     }
 

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Play Smash View Controller-->
+        <scene sceneID="Wdt-BX-LZa">
+            <objects>
+                <viewController storyboardIdentifier="PlaySmashViewController" id="Fbw-c5-qAa" customClass="PlaySmashViewController" customModule="DubSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5HD-bA-yoI"/>
+                        <viewControllerLayoutGuide type="bottom" id="R5U-hV-PfB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pLq-Ke-0II">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKJ-rn-IFT" userLabel="playVideoView">
+                                <rect key="frame" x="0.0" y="106" width="320" height="249"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uxE-qF-SmQ" customClass="FBSDKShareButton">
+                                <rect key="frame" x="8" y="378" width="121" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRe-3p-7sn">
+                                <rect key="frame" x="137" y="468" width="46" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="Fbw-c5-qAa" eventType="touchUpInside" id="23b-dH-oms"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scC-G5-7Xc">
+                                <rect key="frame" x="214" y="382" width="90" height="30"/>
+                                <state key="normal" title="Twitter Share">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="twitterShare:" destination="Fbw-c5-qAa" eventType="touchUpInside" id="V1A-xt-Ylj"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tie-kY-Ktk">
+                                <rect key="frame" x="80" y="424" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Save to Library" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYY-2n-bWH">
+                                <rect key="frame" x="137" y="429" width="116" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="fbShareButton" destination="uxE-qF-SmQ" id="xxT-Ey-xQP"/>
+                        <outlet property="playVideoView" destination="pKJ-rn-IFT" id="Wjb-Wb-uZ1"/>
+                        <outlet property="saveToLibrarySwitch" destination="tie-kY-Ktk" id="1vl-7g-jM4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxy-N0-TLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="693" y="350"/>
+        </scene>
+        <!--Record Smash View Controller-->
+        <scene sceneID="gDH-1Z-jQ6">
+            <objects>
+                <viewController storyboardIdentifier="RecordSmashViewController" id="1Yq-a1-gsp" customClass="RecordSmashViewController" customModule="DubSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pl5-Kx-yeI"/>
+                        <viewControllerLayoutGuide type="bottom" id="g0q-se-yqf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QUJ-LT-LfZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJT-pG-fOE">
+                                <rect key="frame" x="0.0" y="152" width="320" height="244"/>
+                                <color key="backgroundColor" red="0.15686677630000001" green="0.4371659128" blue="0.92097553450000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqo-q6-Jhj">
+                                <rect key="frame" x="110" y="418" width="100" height="100"/>
+                                <state key="normal" image="microphone">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="microphoneButtonTapped:" destination="1Yq-a1-gsp" eventType="touchUpInside" id="UPu-A0-MnX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yty-hY-S2k">
+                                <rect key="frame" x="46" y="434" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5E6-Ec-fRy">
+                                <rect key="frame" x="230" y="424" width="50" height="50"/>
+                                <state key="normal" image="stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButtonTapped:" destination="1Yq-a1-gsp" eventType="touchUpInside" id="0nd-Be-wS4"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7g-c5-Hbn" customClass="EZAudioPlot">
+                                <rect key="frame" x="0.0" y="20" width="320" height="127"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hJT-pG-fOE" secondAttribute="trailing" id="1TV-lK-mSm"/>
+                            <constraint firstAttribute="centerX" secondItem="Dqo-q6-Jhj" secondAttribute="centerX" id="2fq-mO-NWa"/>
+                            <constraint firstItem="hJT-pG-fOE" firstAttribute="leading" secondItem="QUJ-LT-LfZ" secondAttribute="leading" id="Bjd-ai-grJ"/>
+                            <constraint firstItem="hJT-pG-fOE" firstAttribute="top" secondItem="L7g-c5-Hbn" secondAttribute="bottom" constant="5" id="JDo-fA-Y4C"/>
+                            <constraint firstAttribute="trailing" secondItem="L7g-c5-Hbn" secondAttribute="trailing" id="Y9X-5y-h6c"/>
+                            <constraint firstItem="5E6-Ec-fRy" firstAttribute="top" secondItem="hJT-pG-fOE" secondAttribute="bottom" constant="28" id="YI5-ns-na3"/>
+                            <constraint firstItem="g0q-se-yqf" firstAttribute="top" secondItem="hJT-pG-fOE" secondAttribute="bottom" constant="172" id="cpM-Ki-CgP"/>
+                            <constraint firstItem="hJT-pG-fOE" firstAttribute="top" secondItem="Pl5-Kx-yeI" secondAttribute="bottom" constant="132" id="eHg-03-sug"/>
+                            <constraint firstItem="5E6-Ec-fRy" firstAttribute="leading" secondItem="QUJ-LT-LfZ" secondAttribute="leading" constant="230" id="hxE-iU-99d"/>
+                            <constraint firstItem="yty-hY-S2k" firstAttribute="top" secondItem="hJT-pG-fOE" secondAttribute="bottom" constant="38" id="i3e-Bb-lRc"/>
+                            <constraint firstItem="Dqo-q6-Jhj" firstAttribute="top" secondItem="hJT-pG-fOE" secondAttribute="bottom" constant="22" id="isr-1i-2ub"/>
+                            <constraint firstAttribute="trailing" secondItem="5E6-Ec-fRy" secondAttribute="trailing" constant="40" id="jox-Mf-taD"/>
+                            <constraint firstAttribute="trailing" secondItem="yty-hY-S2k" secondAttribute="trailing" constant="226" id="jqE-XH-Fp3"/>
+                            <constraint firstItem="L7g-c5-Hbn" firstAttribute="top" secondItem="Pl5-Kx-yeI" secondAttribute="bottom" id="oCe-35-xrW"/>
+                            <constraint firstItem="yty-hY-S2k" firstAttribute="leading" secondItem="QUJ-LT-LfZ" secondAttribute="leading" constant="46" id="ua1-rh-pzz"/>
+                            <constraint firstItem="L7g-c5-Hbn" firstAttribute="leading" secondItem="QUJ-LT-LfZ" secondAttribute="leading" id="xOF-AA-wmE"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="yty-hY-S2k" id="wRb-iL-0VE"/>
+                        <outlet property="microphoneButton" destination="Dqo-q6-Jhj" id="Vpr-cN-COI"/>
+                        <outlet property="playerView" destination="hJT-pG-fOE" id="c12-W6-Kpm"/>
+                        <outlet property="recordingAudioPlot" destination="L7g-c5-Hbn" id="c88-ex-ay4"/>
+                        <outlet property="stopButton" destination="5E6-Ec-fRy" id="TCJ-ng-zxD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XKV-15-OMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="350"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="microphone" width="100" height="100"/>
+        <image name="stop" width="50" height="50"/>
+    </resources>
+</document>

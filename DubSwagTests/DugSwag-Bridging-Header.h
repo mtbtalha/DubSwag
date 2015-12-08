@@ -11,8 +11,12 @@
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import <ParseFacebookUtilsv4/PFFacebookUtils.h>
 #import <MMDrawerController/MMDrawerController.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <EZAudio/EZAudio.h>
 #endif

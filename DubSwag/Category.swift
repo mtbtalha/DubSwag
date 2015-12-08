@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class Category: NSObject {
     let categoryId: String?
     let categoryName: String?

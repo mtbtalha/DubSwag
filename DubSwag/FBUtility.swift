@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class FBUtility: NSObject {
     
     let btnLogin = FBSDKLoginButton()

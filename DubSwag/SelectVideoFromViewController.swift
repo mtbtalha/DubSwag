@@ -10,18 +10,37 @@ import UIKit
 import MobileCoreServices
 import AVFoundation
 
+protocol SelectionFromDrawerDelegate {
+    func pushViewControllerForIndexPath(indexPathRow: Int)
+}
 
 protocol CategorySelectionDelegate {
     func categoryDidSelect(category: Category)
 }
 
-class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, CategorySelectionDelegate {
+class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, CategorySelectionDelegate, SelectionFromDrawerDelegate {
 
     var videoFileURL: String?
     var thumbnailFileURL: String?
     override func viewDidLoad() {
         super.viewDidLoad()
+//        ParseManager.getUser { (user) -> () in
+//            if (user["smackURL"] as? String == nil) {
+//                let alert = UIAlertController(title: "Create MySmack",
+//                        message: "Please Create MySmack first.",
+//                        preferredStyle: UIAlertControllerStyle.Alert)
+//                    let actionNo = UIAlertAction(title: "OK", style: .Default) { (alertAction) -> Void in
+//                        Router.showCreateMySmackViewController(self)
+//                    }
+//                    alert.addAction(actionNo)
+//                    self.presentViewController(alert, animated: true,
+//                        completion: nil)
+//            }
+//        }
         
+        FBUtility.getFbUsername { (username) -> () in
+            ParseManager.updateUserName(username)
+        }
         // Do any additional setup after loading the view.
     }
     @IBAction func selectVideoFromServerTapped(sender: AnyObject) {
@@ -77,7 +96,7 @@ class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDel
      
         } else { if (mediaType == kUTTypeMovie as! String) {
                 let videoURL = info[UIImagePickerControllerMediaURL] as! NSURL
-                let thumbnailData = getVideoThumbnail(videoURL)
+                let thumbnailData = MediaManager.getVideoThumbnail(videoURL)
                 let videoURLString = videoURL.path
                 println(videoURLString)
             var videoData: NSData = NSFileManager().contentsAtPath(videoURLString!)!
@@ -85,28 +104,36 @@ class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDel
                 message: "Do you want to save your video on Server?",
                 preferredStyle: UIAlertControllerStyle.Alert)
             let actionYes = UIAlertAction(title: "Yes", style: .Default) { (alertAction) -> Void in
-                 ParseManager.uploadFile(videoData, fileName: "video.mov", success: { (file) -> () in
-                    var videoFile = file["File"] as! PFFile
-                    self.videoFileURL = videoFile.url
-                    println(videoFile.url)
-                    Router.showCategorySelectionViewController(self, delegate: self)
-                })
-                ParseManager.uploadFile(thumbnailData!, fileName: "thumbnail.png", success: { (file) -> () in
-                    var imageFile = file["File"] as! PFFile
-                    self.thumbnailFileURL = imageFile.url
-                    println(imageFile.url)
-                    
-                })
+                let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                progressHUD.labelText = "Uploading..."
                 
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
+                        ParseManager.uploadFile(videoData, fileName: "video.mov", success: { (file) -> () in
+                        var videoFile = file["File"] as! PFFile
+                        self.videoFileURL = videoFile.url
+                        println(videoFile.url)
+                        progressHUD.hide(true)
+                        Router.showCategorySelectionViewController(self, delegate: self)
+                    })
+                    ParseManager.uploadFile(thumbnailData!, fileName: "thumbnail.png", success: { (file) -> () in
+                        var imageFile = file["File"] as! PFFile
+                        self.thumbnailFileURL = imageFile.url
+                        println(imageFile.url)
+                    })
+                }
             }
             let actionNo = UIAlertAction(title: "No", style: .Default) { (alertAction) -> Void in
+                var videoCopiedToDocumentDirectoryURL = DataManager.saveVideoFromCameraRollToDocumentsDirectory(videoData)
+                var userVideoPFObject = PFObject(className: "User_Videos")
+                userVideoPFObject["VideoName"] = "video.mov"
+                userVideoPFObject["videoURL"] = videoCopiedToDocumentDirectoryURL.path!
+                var userVideo = UserVideos(videoObject: userVideoPFObject)
+                Router.showPlayVideoViewController(self, video: userVideo, UploadVideo: false)
             }
-
             alert.addAction(actionYes)
             alert.addAction(actionNo)
             self.presentViewController(alert, animated: true,
                 completion: nil)
-
             }
         }
     }
@@ -117,27 +144,36 @@ class SelectVideoFromViewController: UIViewController,UIImagePickerControllerDel
         if user != nil {
             
             ParseManager.uploadUser_video(category.categoryId!, userId: user!.objectId!, videoURL: self.videoFileURL!, thumbnailURL: self.thumbnailFileURL!)
+            var userVideoPFObject = PFObject(className: "User_Videos")
+            userVideoPFObject["VideoName"] = "video.mov"
+            userVideoPFObject["categoryId"] = category.categoryId!
+            userVideoPFObject["userId"] = user!.objectId!
+            userVideoPFObject["videoURL"] = self.videoFileURL!
+            userVideoPFObject["thumbnailURL"] = self.thumbnailFileURL!
+            var userVideo = UserVideos(videoObject: userVideoPFObject)
+            Router.showPlayVideoViewController(self, video: userVideo)
             println("User_video Uploaded")
         } else {
             println("NO User")
         }
     }
     
-    func getVideoThumbnail(url: NSURL) -> NSData? {
-        var err: NSError? = nil
-        let asset = AVURLAsset(URL: url, options: nil)
-        let imgGenerator = AVAssetImageGenerator(asset: asset)
-        let cgImage = imgGenerator.copyCGImageAtTime(CMTimeMake(0, 1), actualTime: nil, error: &err)
-        // !! check the error before proceeding
-        if (err != nil) {
-//
-//        let imageView = UIImageView(image: uiImage)
-          println("ERROR: Can't make video Thumbnail")
-            return nil
-        } else {
-            let uiImage = UIImage(CGImage: cgImage)
-            var data = UIImagePNGRepresentation(uiImage)
-            return data
+    func pushViewControllerForIndexPath(indexPathRow: Int) {
+        switch(indexPathRow){
+        case 0:
+            var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.centerContainer?.closeDrawerAnimated(true, completion: { (BOO) -> Void in
+            })
+            Router.showNewsFeedViewController(self)
+        case 1:
+            var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.centerContainer?.closeDrawerAnimated(true, completion: { (BOO) -> Void in
+            })
+            Router.showNewsFeedViewController(self, onlyMySmash: true)
+        case 2:
+            println("2")
+        default:
+            println("Default of Drawer")
         }
     }
 }

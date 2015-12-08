@@ -34,7 +34,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122" y="297"/>
+            <point key="canvasLocation" x="830" y="745"/>
+        </scene>
+        <!--Create My Smack View Controller-->
+        <scene sceneID="sYZ-V1-XMV">
+            <objects>
+                <viewController storyboardIdentifier="CreateMySmackViewController" id="psx-x5-OBE" customClass="CreateMySmackViewController" customModule="DubSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TRI-3p-TOT"/>
+                        <viewControllerLayoutGuide type="bottom" id="jZI-qv-3IC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kfu-5R-MdW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLg-Ia-zNH">
+                                <rect key="frame" x="118" y="410" width="85" height="30"/>
+                                <state key="normal" title="Use Camera">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="useCameraButtonTapped:" destination="psx-x5-OBE" eventType="touchUpInside" id="HDf-Dt-hCP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fec-FK-t7f">
+                                <rect key="frame" x="107" y="469" width="107" height="30"/>
+                                <state key="normal" title="Save MySmack">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveMySmackButtonTapped:" destination="psx-x5-OBE" eventType="touchUpInside" id="32J-kU-87h"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H7d-bd-xPM">
+                                <rect key="frame" x="0.0" y="105" width="320" height="254"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MySmack will be shortened to 5 seconds after saving" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Si6-Em-X4l">
+                                <rect key="frame" x="16" y="59" width="410" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="playVideoView" destination="H7d-bd-xPM" id="SuW-6Y-uyB"/>
+                        <outlet property="saveMySmackButton" destination="fec-FK-t7f" id="Q3U-Vn-yGa"/>
+                        <outlet property="useCameraButton" destination="cLg-Ia-zNH" id="EYR-Pw-WeN"/>
+                        <outlet property="warningLabel" destination="Si6-Em-X4l" id="8WQ-ke-69Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pah-F4-gJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1374" y="745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UZe-CM-YGL">
